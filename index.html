@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELLIS SARDINE Seminars</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .seminar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .seminar-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .seminar-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1em;
+        }
+
+        .seminar-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .seminar-table tbody tr:hover {
+            background-color: #f5f5f5;
+            transition: background-color 0.3s ease;
+        }
+
+        .seminar-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .date-column {
+            white-space: nowrap;
+            font-weight: 500;
+            color: #667eea;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .status-upcoming {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .status-past {
+            background-color: #f5f5f5;
+            color: #757575;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-style: italic;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .seminar-table {
+                font-size: 0.9em;
+            }
+
+            .seminar-table th,
+            .seminar-table td {
+                padding: 10px 8px;
+            }
+
+            .section-title {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ELLIS SARDINE Seminars</h1>
+            <p>Advancing Machine Translation Research</p>
+        </header>
+
+        <div class="content">
+            <div id="upcoming-seminars-section">
+                <h2 class="section-title">Upcoming Seminars</h2>
+                <table class="seminar-table" id="upcoming-seminars-table">
+                    <thead>
+                        <tr>
+                            <th>Guest Speaker</th>
+                            <th>Affiliation</th>
+                            <th>Talk Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="upcoming-seminars-body">
+                        <tr>
+                            <td colspan="4" class="empty-state">Loading seminars...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="past-seminars-section">
+                <h2 class="section-title">Past Seminars</h2>
+                <table class="seminar-table" id="past-seminars-table">
+                    <thead>
+                        <tr>
+                            <th>Guest Speaker</th>
+                            <th>Affiliation</th>
+                            <th>Talk Title</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="past-seminars-body">
+                        <tr>
+                            <td colspan="4" class="empty-state">No past seminars yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 ELLIS SARDINE. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Function to format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { day: 'numeric', month: 'short' };
+            return date.toLocaleDateString('en-GB', options);
+        }
+
+        // Function to check if date is in the past
+        function isPastDate(dateString) {
+            const date = new Date(dateString);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            return date < today;
+        }
+
+        // Load and display seminars
+        async function loadSeminars() {
+            try {
+                const response = await fetch('seminars.json');
+                const seminars = await response.json();
+
+                const upcomingSeminars = [];
+                const pastSeminars = [];
+
+                // Categorize seminars based on date
+                seminars.forEach(seminar => {
+                    if (isPastDate(seminar.date)) {
+                        pastSeminars.push(seminar);
+                    } else {
+                        upcomingSeminars.push(seminar);
+                    }
+                });
+
+                // Sort upcoming seminars by date (ascending)
+                upcomingSeminars.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+                // Sort past seminars by date (descending)
+                pastSeminars.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                // Display upcoming seminars
+                const upcomingBody = document.getElementById('upcoming-seminars-body');
+                if (upcomingSeminars.length > 0) {
+                    upcomingBody.innerHTML = upcomingSeminars.map(seminar => `
+                        <tr>
+                            <td>${seminar.speaker}</td>
+                            <td>${seminar.affiliation}</td>
+                            <td>${seminar.title}</td>
+                            <td class="date-column">${formatDate(seminar.date)}</td>
+                        </tr>
+                    `).join('');
+                } else {
+                    upcomingBody.innerHTML = '<tr><td colspan="4" class="empty-state">No upcoming seminars scheduled.</td></tr>';
+                }
+
+                // Display past seminars
+                const pastBody = document.getElementById('past-seminars-body');
+                if (pastSeminars.length > 0) {
+                    pastBody.innerHTML = pastSeminars.map(seminar => `
+                        <tr>
+                            <td>${seminar.speaker}</td>
+                            <td>${seminar.affiliation}</td>
+                            <td>${seminar.title}</td>
+                            <td class="date-column">${formatDate(seminar.date)}</td>
+                        </tr>
+                    `).join('');
+                } else {
+                    pastBody.innerHTML = '<tr><td colspan="4" class="empty-state">No past seminars yet.</td></tr>';
+                }
+
+            } catch (error) {
+                console.error('Error loading seminars:', error);
+                document.getElementById('upcoming-seminars-body').innerHTML = 
+                    '<tr><td colspan="4" class="empty-state">Error loading seminars. Please try again later.</td></tr>';
+            }
+        }
+
+        // Load seminars when page loads
+        document.addEventListener('DOMContentLoaded', loadSeminars);
+    </script>
+</body>
+</html>
