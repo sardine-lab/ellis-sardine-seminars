@@ -1,300 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELLIS SARDINE Seminars</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELLIS–SARDINE Seminars</title>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%22100%22>🐟</text></svg>"
+  />
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sardine-blue': '#007a94',
+            'sardine-light': '#00a4c3',
+            'sardine-deep': '#144955',
+          },
+        },
+      },
+    };
+  </script>
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
+  <!-- Inter font (matches Sardine Lab) -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 1.2em;
-            opacity: 0.95;
-        }
-
-        .content {
-            padding: 40px 30px;
-        }
-
-        .section-title {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #667eea;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-        }
-
-        .seminar-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .seminar-table thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .seminar-table th {
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 1em;
-        }
-
-        .seminar-table td {
-            padding: 15px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .seminar-table tbody tr:hover {
-            background-color: #f5f5f5;
-            transition: background-color 0.3s ease;
-        }
-
-        .seminar-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .date-column {
-            white-space: nowrap;
-            font-weight: 500;
-            color: #667eea;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-
-        .status-upcoming {
-            background-color: #e3f2fd;
-            color: #1976d2;
-        }
-
-        .status-past {
-            background-color: #f5f5f5;
-            color: #757575;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 40px;
-            color: #999;
-            font-style: italic;
-        }
-
-        footer {
-            background: #f8f9fa;
-            padding: 20px 30px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .content {
-                padding: 20px 15px;
-            }
-
-            .seminar-table {
-                font-size: 0.9em;
-            }
-
-            .seminar-table th,
-            .seminar-table td {
-                padding: 10px 8px;
-            }
-
-            .section-title {
-                font-size: 1.4em;
-            }
-        }
-    </style>
+  <style>
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', sans-serif;
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>ELLIS SARDINE Seminars</h1>
-            <p>Advancing Machine Translation Research</p>
-        </header>
 
-        <div class="content">
-            <div id="upcoming-seminars-section">
-                <h2 class="section-title">Upcoming Seminars</h2>
-                <table class="seminar-table" id="upcoming-seminars-table">
-                    <thead>
-                        <tr>
-                            <th>Guest Speaker</th>
-                            <th>Affiliation</th>
-                            <th>Talk Title</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody id="upcoming-seminars-body">
-                        <tr>
-                            <td colspan="4" class="empty-state">Loading seminars...</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Top bar -->
+  <header
+    class="bg-gradient-to-r from-sardine-blue via-sardine-light to-sardine-blue text-white shadow-md"
+  >
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <!-- Left: logos + title -->
+      <div class="flex items-center gap-4">
+        <!-- Sardine Lab logo (replace src if needed) -->
+        <!-- <img
+          src="figs/logo-dark.png"
+          alt="SARDINE Lab logo"
+          class="h-12 w-auto drop-shadow-md"
+        /> -->
+        <!-- ELLIS logo (update src/path as appropriate) -->
+        <!-- <img
+          src="figs/ellis.png"
+          alt="ELLIS logo"
+          class="h-10 w-auto hidden sm:inline-block opacity-90"
+        /> -->
 
-            <div id="past-seminars-section">
-                <h2 class="section-title">Past Seminars</h2>
-                <table class="seminar-table" id="past-seminars-table">
-                    <thead>
-                        <tr>
-                            <th>Guest Speaker</th>
-                            <th>Affiliation</th>
-                            <th>Talk Title</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody id="past-seminars-body">
-                        <tr>
-                            <td colspan="4" class="empty-state">No past seminars yet.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="ml-1">
+          <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight">
+            ELLIS–SARDINE Seminars
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-100/80">
+            Weekly talks on Machine Learning &amp; Natural Language Processing
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: quick info -->
+      <div class="text-xs sm:text-sm md:text-right space-y-1">
+        <p>
+          <span class="font-semibold">When:</span>
+          Mondays, <span class="font-semibold">17:00</span> Lisbon time
+        </p>
+        <p>
+          <span class="font-semibold">Where:</span>
+          Online &amp; Lisbon (hybrid)
+        </p>
+        <p>
+          <a
+            href="https://calendar.google.com/calendar/u/0?cid=dDQ3NDl0cnVubzRhaHVlczR0OW9vYm1ncTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+            target="_blank"
+            class="inline-flex items-center px-3 py-1 mt-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 text-xs font-medium"
+          >
+            Add to Google Calendar
+          </a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10 space-y-10">
+    <!-- Intro / description -->
+    <section>
+      <div
+        class="rounded-2xl bg-white shadow-sm border border-sardine-blue/10 p-6 sm:p-7 flex flex-col gap-4 md:flex-row md:items-center"
+      >
+        <div class="flex-1">
+          <p class="text-sm sm:text-base leading-relaxed text-slate-700">
+            The <span class="font-semibold">ELLIS–SARDINE Seminars</span> provide a regular forum
+            to discuss research in
+            <span class="font-semibold">Machine Learning</span> and
+            <span class="font-semibold">Natural Language Processing</span>, featuring speakers
+            from around the world.
+          </p>
+
+          <p class="mt-3 text-sm sm:text-base leading-relaxed text-slate-700">
+            The seminars are organized by members of the
+            <a
+              href="https://sardine-lab.github.io/"
+              class="font-semibold text-sardine-blue hover:underline"
+              target="_blank"
+              >SARDINE Lab</a
+            >
+            and the
+            <a
+              href="https://ellis.eu/"
+              class="font-semibold text-sardine-blue hover:underline"
+              target="_blank"
+              >ELLIS network</a
+            >, and are
+            <span class="font-semibold">open to the public</span>.
+          </p>
+
+          <p class="mt-3 text-xs sm:text-sm text-slate-500">
+            Want to be the next presenter? Reach out to
+            <a
+              href="https://cmuportugal.org/students/lara-neves/" target="_blank"
+              class="text-sardine-blue font-medium hover:underline"
+              >Lara Neves</a> or 
+              <a
+              href="https://sonalsannigrahi.github.io/" target="_blank"
+              class="text-sardine-blue font-medium hover:underline"
+              >Sonal Sannigrahi</a>.
+          </p>
         </div>
 
-        <footer>
-            <p>&copy; 2025 ELLIS SARDINE. All rights reserved.</p>
-        </footer>
+        <div
+          class="mt-2 md:mt-0 md:ml-6 flex-shrink-0 w-full md:w-64 lg:w-72 rounded-2xl border border-dashed border-sardine-blue/30 bg-sardine-blue/5 px-4 py-3 text-sm text-slate-700"
+        >
+          <p class="font-semibold text-sardine-blue mb-1">
+            ☀️ Next talk (Lisbon time)
+          </p>
+          <p id="next-talk" class="text-slate-700">
+            Loading next seminar...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming seminars -->
+    <section aria-labelledby="upcoming-title">
+      <div class="flex items-center justify-between mb-3">
+        <h2
+          id="upcoming-title"
+          class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2"
+        >
+          Upcoming Seminars
+          <span
+            id="upcoming-count"
+            class="hidden text-xs rounded-full bg-sardine-blue/10 text-sardine-blue px-2 py-0.5 font-medium"
+          ></span>
+        </h2>
+      </div>
+
+      <div class="rounded-2xl bg-white shadow-sm border border-sardine-blue/10">
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead>
+              <tr class="bg-gradient-to-r from-sardine-blue to-sardine-light text-white">
+                <th class="px-4 py-3 text-left font-semibold">Guest Speaker</th>
+                <th class="px-4 py-3 text-left font-semibold">Affiliation</th>
+                <th class="px-4 py-3 text-left font-semibold">Talk Title</th>
+                <th class="px-4 py-3 text-left font-semibold whitespace-nowrap">
+                  Date
+                </th>
+              </tr>
+            </thead>
+            <tbody id="upcoming-body">
+              <tr>
+                <td
+                  colspan="4"
+                  class="px-4 py-6 text-center text-slate-500 text-sm"
+                >
+                  Loading seminars...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past seminars -->
+    <section aria-labelledby="past-title">
+      <div class="flex items-center justify-between mb-3 mt-10">
+        <h2
+          id="past-title"
+          class="text-xl sm:text-2xl font-bold text-slate-900"
+        >
+          Past Seminars
+        </h2>
+      </div>
+
+      <div class="rounded-2xl bg-white shadow-sm border border-sardine-blue/10">
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead>
+              <tr class="bg-slate-100 text-slate-700">
+                <th class="px-4 py-3 text-left font-semibold">Guest Speaker</th>
+                <th class="px-4 py-3 text-left font-semibold">Affiliation</th>
+                <th class="px-4 py-3 text-left font-semibold">Talk Title</th>
+                <th class="px-4 py-3 text-left font-semibold whitespace-nowrap">
+                  Date
+                </th>
+              </tr>
+            </thead>
+            <tbody id="past-body">
+              <tr>
+                <td
+                  colspan="4"
+                  class="px-4 py-6 text-center text-slate-500 text-sm"
+                >
+                  No past seminars yet.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-10">
+          <p class="text-xs sm:text-sm text-slate-500">Note: We previously organized the IST-Unbabel Seminars, available at <a class="text-sardine-blue font-medium hover:underline" href="https://ist-unbabel-seminars.github.io/index" target="_blank">ist-unbabel-seminars.github.io</a></p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer with logos -->
+  <footer class="text-slate-100 ">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div
+        class="flex flex-col items-center flex-row justify-between gap-6"
+      >
+        <div
+          class="flex flex-wrap items-center gap-4"
+        >
+          <img src="figs/logo-light.png" alt="SARDINE Lab logo" class="h-12 w-auto p-1"/>
+          <img src="figs/ellis.png" alt="ELLIS logo" class="h-14 w-auto p-1" />
+          <img src="figs/tecnico.png" alt="Instituto Superior Técnico logo" class="h-12 w-auto p-1" />
+        </div>
+      </div>
     </div>
+  </footer>
 
-    <script>
-        // Function to format date
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            const options = { day: 'numeric', month: 'short' };
-            return date.toLocaleDateString('en-GB', options);
-        }
 
-        // Function to check if date is in the past
-        function isPastDate(dateString) {
-            const date = new Date(dateString);
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            return date < today;
-        }
+  <script src="seminars.js"></script>
 
-        // Load and display seminars
-        async function loadSeminars() {
-            try {
-                const response = await fetch('seminars.json');
-                const seminars = await response.json();
+  <!-- Seminar loading logic -->
+  <script>
+      function formatDate(dateString) {
+        const d = new Date(dateString);
+        if (Number.isNaN(d.getTime())) return dateString;
+        return d.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        });
+      }
 
-                const upcomingSeminars = [];
-                const pastSeminars = [];
+      function isPast(dateString) {
+        const d = new Date(dateString);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return d < today;
+      }
 
-                // Categorize seminars based on date
-                seminars.forEach(seminar => {
-                    if (isPastDate(seminar.date)) {
-                        pastSeminars.push(seminar);
-                    } else {
-                        upcomingSeminars.push(seminar);
-                    }
-                });
+      function loadSeminars() {
+        try {
+          const seminars = SEMINARS.slice();
+          const upcoming = [];
+          const past = [];
 
-                // Sort upcoming seminars by date (ascending)
-                upcomingSeminars.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-                // Sort past seminars by date (descending)
-                pastSeminars.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-                // Display upcoming seminars
-                const upcomingBody = document.getElementById('upcoming-seminars-body');
-                if (upcomingSeminars.length > 0) {
-                    upcomingBody.innerHTML = upcomingSeminars.map(seminar => `
-                        <tr>
-                            <td>${seminar.speaker}</td>
-                            <td>${seminar.affiliation}</td>
-                            <td>${seminar.title}</td>
-                            <td class="date-column">${formatDate(seminar.date)}</td>
-                        </tr>
-                    `).join('');
-                } else {
-                    upcomingBody.innerHTML = '<tr><td colspan="4" class="empty-state">No upcoming seminars scheduled.</td></tr>';
-                }
-
-                // Display past seminars
-                const pastBody = document.getElementById('past-seminars-body');
-                if (pastSeminars.length > 0) {
-                    pastBody.innerHTML = pastSeminars.map(seminar => `
-                        <tr>
-                            <td>${seminar.speaker}</td>
-                            <td>${seminar.affiliation}</td>
-                            <td>${seminar.title}</td>
-                            <td class="date-column">${formatDate(seminar.date)}</td>
-                        </tr>
-                    `).join('');
-                } else {
-                    pastBody.innerHTML = '<tr><td colspan="4" class="empty-state">No past seminars yet.</td></tr>';
-                }
-
-            } catch (error) {
-                console.error('Error loading seminars:', error);
-                document.getElementById('upcoming-seminars-body').innerHTML = 
-                    '<tr><td colspan="4" class="empty-state">Error loading seminars. Please try again later.</td></tr>';
+          seminars.forEach((s) => {
+            const status = (s.status || '').toLowerCase();
+            if (status === 'upcoming') {
+              upcoming.push(s);
+            } else if (status === 'past') {
+              past.push(s);
+            } else if (isPast(s.date)) {
+              past.push(s);
+            } else {
+              upcoming.push(s);
             }
-        }
+          });
 
-        // Load seminars when page loads
-        document.addEventListener('DOMContentLoaded', loadSeminars);
+          upcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
+          past.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          const upcomingBody = document.getElementById('upcoming-body');
+          const pastBody = document.getElementById('past-body');
+          const upcomingCount = document.getElementById('upcoming-count');
+          const nextTalkEl = document.getElementById('next-talk');
+
+          // Upcoming
+          if (upcoming.length) {
+            upcomingBody.innerHTML = upcoming
+              .map(
+                (s, idx) => `
+              <tr class="${
+                idx === 0
+                  ? 'bg-sardine-blue/5'
+                  : 'odd:bg-slate-50/60 hover:bg-slate-100/60'
+              } transition-colors">
+                <td class="px-4 py-3 whitespace-nowrap font-medium text-slate-900">
+                  ${s.speaker}
+                </td>
+                <td class="px-4 py-3 whitespace-nowrap text-slate-700">
+                  ${s.affiliation || ''}
+                </td>
+                <td class="px-4 py-3 text-slate-700">
+                  ${s.title || ''}
+                </td>
+                <td class="px-4 py-3 whitespace-nowrap text-sardine-blue font-semibold">
+                  ${formatDate(s.date)}
+                </td>
+              </tr>`
+              )
+              .join('');
+
+            upcomingCount.textContent = upcoming.length;
+            upcomingCount.classList.remove('hidden');
+
+            const next = upcoming[0];
+            nextTalkEl.textContent =
+              next.speaker && next.title
+                ? `${formatDate(next.date)} — ${next.speaker}: “${next.title}”`
+                : formatDate(next.date);
+          } else {
+            upcomingBody.innerHTML = `
+              <tr>
+                <td colspan="4" class="px-4 py-6 text-center text-slate-500 text-sm">
+                  No upcoming seminars scheduled. Please check back soon!
+                </td>
+              </tr>`;
+            nextTalkEl.textContent = 'No upcoming seminar scheduled.';
+          }
+
+          // Past
+          if (past.length) {
+            pastBody.innerHTML = past
+              .map(
+                (s) => `
+              <tr class="odd:bg-slate-50/40 hover:bg-slate-100/60 transition-colors">
+                <td class="px-4 py-3 whitespace-nowrap font-medium text-slate-900">
+                  ${s.speaker}
+                </td>
+                <td class="px-4 py-3 whitespace-nowrap text-slate-700">
+                  ${s.affiliation || ''}
+                </td>
+                <td class="px-4 py-3 text-slate-700">
+                  ${s.title || ''}
+                </td>
+                <td class="px-4 py-3 whitespace-nowrap text-slate-500">
+                  ${formatDate(s.date)}
+                </td>
+              </tr>`
+              )
+              .join('');
+          }
+        } catch (err) {
+          console.error('Error loading seminars:', err);
+          document.getElementById('upcoming-body').innerHTML = `
+            <tr>
+              <td colspan="4" class="px-4 py-6 text-center text-red-500 text-sm">
+                Failed to load seminars.
+              </td>
+            </tr>`;
+        }
+      }
+
+      loadSeminars();
     </script>
 </body>
 </html>
