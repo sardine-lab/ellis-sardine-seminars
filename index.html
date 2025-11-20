@@ -27,16 +27,9 @@
     };
   </script>
 
-  <!-- Inter font (matches Sardine Lab) -->
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  />
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
@@ -47,143 +40,170 @@
       font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         'Segoe UI', sans-serif;
     }
+    
+    /* Smooth animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    /* Title text */
+    .title-text {
+      color: #007a94;
+    }
+
+    /* Card hover effect */
+    .seminar-card {
+      transition: all 0.3s ease;
+    }
+    
+    .seminar-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 122, 148, 0.15);
+    }
   </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800">
-  <!-- Top bar -->
-  <header
-    class="bg-gradient-to-r from-sardine-blue via-sardine-light to-sardine-blue text-white shadow-md"
-  >
-    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-      <!-- Left: logos + title -->
-      <div class="flex items-center gap-4">
-        <!-- Sardine Lab logo (replace src if needed) -->
-        <!-- <img
-          src="figs/logo-dark.png"
-          alt="SARDINE Lab logo"
-          class="h-12 w-auto drop-shadow-md"
-        /> -->
-        <!-- ELLIS logo (update src/path as appropriate) -->
-        <!-- <img
-          src="figs/ellis.png"
-          alt="ELLIS logo"
-          class="h-10 w-auto hidden sm:inline-block opacity-90"
-        /> -->
-
-        <div class="ml-1">
-          <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight">
-            ELLIS–SARDINE Seminars
-          </h1>
-          <p class="text-xs sm:text-sm text-slate-100/80">
-            Weekly talks on Machine Learning &amp; Natural Language Processing
-          </p>
+<body class="bg-gradient-to-br from-slate-50 via-white to-slate-50 text-slate-800">
+  
+  <!-- Header - Cleaner & More Modern -->
+  <header class="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50 backdrop-blur-sm bg-white/95">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <!-- Left: Title -->
+        <div class="flex items-center gap-3">
+          <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-sardine-blue to-sardine-light text-white text-2xl shadow-md">
+            🐟
+          </div>
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold title-text">
+              ELLIS–SARDINE Seminars
+            </h1>
+            <p class="text-sm text-slate-600 mt-0.5">
+              ML & NLP Research Talks
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- Right: quick info -->
-      <div class="text-xs sm:text-sm md:text-right space-y-1 py-2">
-        <p>
-          <span class="font-semibold">When:</span>
-          Mondays, <span class="font-semibold">17:00</span> Lisbon time
-        </p>
-        <p>
-          <span class="font-semibold">Where:</span>
-          Online &amp; Lisbon (hybrid)
-        </p>
+        <!-- Right: Quick info -->
+        <div class="flex flex-wrap gap-4 sm:gap-6 text-sm">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-sardine-blue/10 flex items-center justify-center">
+              <span class="text-lg">📅</span>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-medium">When</p>
+              <p class="font-semibold text-slate-800">Mon, 17:00 Lisbon</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-sardine-blue/10 flex items-center justify-center">
+              <span class="text-lg">📍</span>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-medium">Where</p>
+              <p class="font-semibold text-slate-800">Hybrid (Lisbon)</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 py-10 space-y-10">
-    <!-- Intro / description -->
-    <section>
-      <div
-        class="rounded-2xl bg-white shadow-sm border border-sardine-blue/10 p-6 sm:p-7 flex flex-col gap-4 md:flex-row md:items-center"
-      >
-        <div class="flex-1">
-          <p class="text-sm leading-relaxed text-slate-700">
-            The <span class="font-semibold">ELLIS–SARDINE Seminars</span> provide a regular forum
-            to discuss research in
-            <span class="font-semibold">Machine Learning</span> and
-            <span class="font-semibold">Natural Language Processing</span>, featuring speakers
-            from around the world. The seminars are organized by members of the
-            <a
-              href="https://sardine-lab.github.io/"
-              class="font-semibold text-sardine-blue hover:underline"
-              target="_blank"
-              >SARDINE Lab</a
-            >
-            and the
-            <a
-              href="https://ellis.eu/research/sites/unit-lisbon"
-              class="font-semibold text-sardine-blue hover:underline"
-              target="_blank"
-              >ELLIS Lisbon Unit</a
-            >, and are
-            <span class="font-semibold">open to the public</span>.
-          </p>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+    
+    <!-- About -->
+    <section class="animate-fade-in">
+      <div class="rounded-2xl bg-white shadow-md border border-slate-200 p-6 sm:p-8">
+        <p class="text-base leading-relaxed text-slate-700">
+          The <span class="font-semibold text-sardine-blue">ELLIS–SARDINE Seminars</span> provide a regular forum
+          to discuss research in
+          <span class="font-semibold">Machine Learning</span> and
+          <span class="font-semibold">Natural Language Processing</span>, featuring speakers
+          from around the world. Organized by the
+          <a
+            href="https://sardine-lab.github.io/"
+            class="font-semibold text-sardine-blue hover:text-sardine-light transition-colors underline decoration-sardine-blue/30 hover:decoration-sardine-light"
+            target="_blank"
+            >SARDINE Lab</a
+          >
+          and
+          <a
+            href="https://ellis.eu/research/sites/unit-lisbon"
+            class="font-semibold text-sardine-blue hover:text-sardine-light transition-colors underline decoration-sardine-blue/30 hover:decoration-sardine-light"
+            target="_blank"
+            >ELLIS Lisbon Unit</a
+          >, and
+          <span class="font-semibold">open to the public</span>.
+        </p>
 
-          <p class="mt-3 text-xs sm:text-sm text-slate-500">
-            Want to be the next presenter? Reach out to
-            <a
-              href="https://cmuportugal.org/students/lara-neves/" target="_blank"
-              class="text-sardine-blue font-medium hover:underline"
-              >Lara Neves</a> or 
+        <div class="mt-6 pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-sardine-blue/10 flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">🎤</span>
+            </div>
+            <p class="text-sm text-slate-600">
+              Want to present? Contact
               <a
-              href="https://sonalsannigrahi.github.io/" target="_blank"
-              class="text-sardine-blue font-medium hover:underline"
-              >Sonal Sannigrahi</a>.
-          </p>
-        </div>
-
-        <div
-          class="mt-2 md:mt-0 md:ml-6 flex-shrink-0 w-full md:w-64 lg:w-72 rounded-2xl border border-dashed border-sardine-blue/30 bg-sardine-blue/5 px-4 py-3 text-sm text-slate-700"
-        >
-          <p class="font-semibold text-sardine-blue mb-1">
-            ☀️ Next talk (Lisbon time)
-          </p>
-          <p id="next-talk" class="text-slate-700">
-            Loading next seminar...
-          </p>
+                href="https://cmuportugal.org/students/lara-neves/"
+                target="_blank"
+                class="text-sardine-blue font-medium hover:underline"
+                >Lara Neves</a
+              >
+              or
+              <a
+                href="https://sonalsannigrahi.github.io/"
+                target="_blank"
+                class="text-sardine-blue font-medium hover:underline"
+                >Sonal Sannigrahi</a
+              >
+            </p>
+          </div>
+          <a 
+            href="https://meet.google.com/oeq-ctgn-twn"
+            target="_blank"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sardine-blue text-white font-semibold hover:bg-sardine-light transition-colors shadow-md hover:shadow-lg"
+          >
+            <span class="text-lg">🖥️</span>
+            Join on Google Meet
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Upcoming seminars -->
     <section aria-labelledby="upcoming-title">
-      <div class="flex items-center justify-between mb-3">
-        <h2
-          id="upcoming-title"
-          class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2"
-        >
+      <div class="flex items-center justify-between mb-6">
+        <h2 id="upcoming-title" class="text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-3">
+          <span class="text-2xl">📅</span>
           Upcoming Seminars
           <span
             id="upcoming-count"
-            class="hidden text-xs rounded-full bg-sardine-blue/10 text-sardine-blue px-2 py-0.5 font-medium"
+            class="hidden text-sm rounded-full bg-sardine-blue/10 text-sardine-blue px-3 py-1 font-semibold"
           ></span>
         </h2>
       </div>
 
-      <div class="rounded-2xl bg-white shadow-sm border border-sardine-blue/10">
+      <!-- Desktop table -->
+      <div class="hidden lg:block rounded-2xl bg-white shadow-md border border-slate-200 overflow-hidden">
         <div class="overflow-x-auto">
           <table class="min-w-full text-sm">
             <thead>
               <tr class="bg-gradient-to-r from-sardine-blue to-sardine-light text-white">
-                <th class="px-4 py-3 text-left font-semibold">Guest Speaker</th>
-                <th class="px-4 py-3 text-left font-semibold">Affiliation</th>
-                <th class="px-4 py-3 text-left font-semibold">Talk Title</th>
-                <th class="px-4 py-3 text-left font-semibold whitespace-nowrap">
-                  Date
-                </th>
+                <th class="px-6 py-4 text-left font-semibold">Guest Speaker</th>
+                <th class="px-6 py-4 text-left font-semibold">Affiliation</th>
+                <th class="px-6 py-4 text-left font-semibold">Talk Title</th>
+                <th class="px-6 py-4 text-left font-semibold whitespace-nowrap">Date</th>
+                <th class="px-6 py-4 text-center font-semibold">Resources</th>
               </tr>
             </thead>
-            <tbody id="upcoming-body">
+            <tbody id="upcoming-body-desktop">
               <tr>
-                <td
-                  colspan="4"
-                  class="px-4 py-6 text-center text-slate-500 text-sm"
-                >
+                <td colspan="5" class="px-6 py-8 text-center text-slate-500 text-sm">
                   Loading seminars...
                 </td>
               </tr>
@@ -191,38 +211,40 @@
           </table>
         </div>
       </div>
+
+      <!-- Mobile cards -->
+      <div class="lg:hidden space-y-4" id="upcoming-cards-mobile">
+        <div class="text-center py-8 text-slate-500 text-sm">
+          Loading seminars...
+        </div>
+      </div>
     </section>
 
     <!-- Past seminars -->
     <section aria-labelledby="past-title">
-      <div class="flex items-center justify-between mb-3 mt-10">
-        <h2
-          id="past-title"
-          class="text-xl sm:text-2xl font-bold text-slate-900"
-        >
+      <div class="flex items-center justify-between mb-6 mt-16">
+        <h2 id="past-title" class="text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-3">
+          <span class="text-2xl">🎓</span>
           Past Seminars
         </h2>
       </div>
 
-      <div class="rounded-2xl bg-white shadow-sm border border-sardine-blue/10">
+      <!-- Desktop table -->
+      <div class="hidden lg:block rounded-2xl bg-white shadow-md border border-slate-200 overflow-hidden">
         <div class="overflow-x-auto">
           <table class="min-w-full text-sm">
             <thead>
               <tr class="bg-slate-100 text-slate-700">
-                <th class="px-4 py-3 text-left font-semibold">Guest Speaker</th>
-                <th class="px-4 py-3 text-left font-semibold">Affiliation</th>
-                <th class="px-4 py-3 text-left font-semibold">Talk Title</th>
-                <th class="px-4 py-3 text-left font-semibold whitespace-nowrap">
-                  Date
-                </th>
+                <th class="px-6 py-4 text-left font-semibold">Guest Speaker</th>
+                <th class="px-6 py-4 text-left font-semibold">Affiliation</th>
+                <th class="px-6 py-4 text-left font-semibold">Talk Title</th>
+                <th class="px-6 py-4 text-left font-semibold whitespace-nowrap">Date</th>
+                <th class="px-6 py-4 text-center font-semibold">Resources</th>
               </tr>
             </thead>
-            <tbody id="past-body">
+            <tbody id="past-body-desktop">
               <tr>
-                <td
-                  colspan="4"
-                  class="px-4 py-6 text-center text-slate-500 text-sm"
-                >
+                <td colspan="5" class="px-6 py-8 text-center text-slate-500 text-sm">
                   No past seminars yet.
                 </td>
               </tr>
@@ -231,157 +253,287 @@
         </div>
       </div>
 
-      <div class="mt-10">
-          <p class="text-xs sm:text-sm text-slate-500">Note: We previously organized the IST-Unbabel Seminars, available at <a class="text-sardine-blue font-medium hover:underline" href="https://ist-unbabel-seminars.github.io/index" target="_blank">ist-unbabel-seminars.github.io</a></p>
+      <!-- Mobile cards -->
+      <div class="lg:hidden space-y-4" id="past-cards-mobile">
+        <div class="text-center py-8 text-slate-500 text-sm">
+          No past seminars yet.
+        </div>
       </div>
 
+      <div class="mt-8">
+          <p class="text-sm text-slate-600">
+            We previously organized the IST-Unbabel Seminars, available at <a class="text-sardine-blue font-medium hover:underline" href="https://ist-unbabel-seminars.github.io/index" target="_blank">ist-unbabel-seminars.github.io</a>.
+          </p>
+      </div>
     </section>
   </main>
 
-  <!-- Footer with logos -->
-  <footer class="text-slate-100 ">
-    <div class="max-w-6xl mx-auto px-4 py-8">
-      <div
-        class="flex flex-col items-center flex-row justify-between gap-6"
-      >
-        <div
-          class="flex flex-wrap items-center gap-4"
-        >
-          <img src="figs/logo-light.png" alt="SARDINE Lab logo" class="h-12 w-auto p-1"/>
-          <img src="figs/ellis-lisbon.png" alt="ELLIS Lisbon logo" class="h-14 w-auto p-1" />
-          <img src="figs/tecnico.png" alt="Instituto Superior Técnico logo" class="h-12 w-auto p-1" />
+  <!-- Footer -->
+  <footer class="bg-slate-100 border-t border-slate-200 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col items-center gap-8">
+        <div class="flex flex-wrap items-center justify-center gap-8">
+          <img src="figs/ellis.png" alt="ELLIS Lisbon logo" class="h-16 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="figs/logo-light.png" alt="SARDINE Lab logo" class="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="figs/tecnico.png" alt="Instituto Superior Técnico logo" class="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity" />
         </div>
+        <!-- <div class="text-center text-sm text-slate-500">
+          <p>© ELLIS–SARDINE Seminars</p>
+        </div> -->
       </div>
     </div>
   </footer>
-
 
   <script src="seminars.js"></script>
 
   <!-- Seminar loading logic -->
   <script>
-      function formatDate(dateString) {
-        const d = new Date(dateString);
-        if (Number.isNaN(d.getTime())) return dateString;
-        return d.toLocaleDateString('en-GB', {
-          day: 'numeric',
-          month: 'short',
-          year: 'numeric',
-        });
+    function formatDate(dateString) {
+      const d = new Date(dateString);
+      if (Number.isNaN(d.getTime())) return dateString;
+      return d.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      });
+    }
+
+    function isPast(dateString) {
+      const d = new Date(dateString);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return d < today;
+    }
+
+    function createSeminarCard(s, isNext = false) {
+      const cardClass = isNext 
+        ? 'seminar-card rounded-2xl bg-gradient-to-br from-sardine-blue/5 to-sardine-light/5 border-2 border-sardine-blue/20 p-5 shadow-md'
+        : 'seminar-card rounded-xl bg-white border border-slate-200 p-5 shadow-sm';
+      
+      const speakerName = s.speaker_url 
+        ? `<a href="${s.speaker_url}" target="_blank" class="hover:underline">${s.speaker || 'TBA'}</a>`
+        : (s.speaker || 'TBA');
+
+      const resources = [];
+      if (s.slides_url) {
+        resources.push(`<a href="${s.slides_url}" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-sm font-medium">
+          📊 Slides
+        </a>`);
       }
-
-      function isPast(dateString) {
-        const d = new Date(dateString);
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        return d < today;
+      if (s.paper_url) {
+        resources.push(`<a href="${s.paper_url}" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-sm font-medium">
+          📄 Paper
+        </a>`);
       }
-
-      function loadSeminars() {
-        try {
-          const seminars = SEMINARS.slice();
-          const upcoming = [];
-          const past = [];
-
-          seminars.forEach((s) => {
-            const status = (s.status || '').toLowerCase();
-            if (status === 'upcoming') {
-              upcoming.push(s);
-            } else if (status === 'past') {
-              past.push(s);
-            } else if (isPast(s.date)) {
-              past.push(s);
-            } else {
-              upcoming.push(s);
-            }
-          });
-
-          upcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
-          past.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-          const upcomingBody = document.getElementById('upcoming-body');
-          const pastBody = document.getElementById('past-body');
-          const upcomingCount = document.getElementById('upcoming-count');
-          const nextTalkEl = document.getElementById('next-talk');
-
-          // Upcoming
-          if (upcoming.length) {
-            upcomingBody.innerHTML = upcoming
-              .map(
-                (s, idx) => `
-              <tr class="${
-                idx === 0
-                  ? 'bg-sardine-blue/5'
-                  : 'odd:bg-slate-50/60 hover:bg-slate-100/60'
-              } transition-colors">
-                <td class="px-4 py-3 whitespace-nowrap font-medium text-slate-900">
-                  ${s.speaker}
-                </td>
-                <td class="px-4 py-3 whitespace-nowrap text-slate-700">
-                  ${s.affiliation || ''}
-                </td>
-                <td class="px-4 py-3 text-slate-700">
-                  ${s.title || ''}
-                </td>
-                <td class="px-4 py-3 whitespace-nowrap text-sardine-blue font-semibold">
+      const resourcesHtml = resources.length 
+        ? `<div class="flex flex-wrap gap-2 pt-3 border-t border-slate-200">${resources.join('')}</div>`
+        : '';
+      
+      return `
+        <div class="${cardClass}">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex-1">
+                <h3 class="font-bold text-lg text-slate-900">${speakerName}</h3>
+                <p class="text-sm text-slate-600 mt-0.5">${s.affiliation || 'TBA'}</p>
+              </div>
+              <div class="flex-shrink-0">
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                  isNext 
+                    ? 'bg-sardine-blue text-white' 
+                    : 'bg-slate-100 text-slate-700'
+                }">
                   ${formatDate(s.date)}
-                </td>
-              </tr>`
-              )
-              .join('');
+                </span>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-200">
+              <p class="text-sm text-slate-700 leading-relaxed">
+                ${s.title || 'Title TBA'}
+              </p>
+            </div>
+            ${resourcesHtml}
+          </div>
+        </div>
+      `;
+    }
 
-            upcomingCount.textContent = upcoming.length;
-            upcomingCount.classList.remove('hidden');
+    function loadSeminars() {
+      try {
+        const seminars = SEMINARS.slice();
+        const upcoming = [];
+        const past = [];
 
-            const next = upcoming[0];
-            nextTalkEl.textContent =
-              next.speaker && next.title
-                ? `${formatDate(next.date)} — ${next.speaker}: “${next.title}”`
-                : formatDate(next.date);
+        seminars.forEach((s) => {
+          const status = (s.status || '').toLowerCase();
+          if (status === 'upcoming') {
+            upcoming.push(s);
+          } else if (status === 'past') {
+            past.push(s);
+          } else if (isPast(s.date)) {
+            past.push(s);
           } else {
-            upcomingBody.innerHTML = `
-              <tr>
-                <td colspan="4" class="px-4 py-6 text-center text-slate-500 text-sm">
-                  No upcoming seminars scheduled. Please check back soon!
-                </td>
-              </tr>`;
-            nextTalkEl.textContent = 'No upcoming seminar scheduled.';
+            upcoming.push(s);
           }
+        });
 
-          // Past
-          if (past.length) {
-            pastBody.innerHTML = past
-              .map(
-                (s) => `
-              <tr class="odd:bg-slate-50/40 hover:bg-slate-100/60 transition-colors">
-                <td class="px-4 py-3 whitespace-nowrap font-medium text-slate-900">
-                  ${s.speaker}
-                </td>
-                <td class="px-4 py-3 whitespace-nowrap text-slate-700">
-                  ${s.affiliation || ''}
-                </td>
-                <td class="px-4 py-3 text-slate-700">
-                  ${s.title || ''}
-                </td>
-                <td class="px-4 py-3 whitespace-nowrap text-slate-500">
-                  ${formatDate(s.date)}
-                </td>
-              </tr>`
-              )
-              .join('');
-          }
-        } catch (err) {
-          console.error('Error loading seminars:', err);
-          document.getElementById('upcoming-body').innerHTML = `
-            <tr>
-              <td colspan="4" class="px-4 py-6 text-center text-red-500 text-sm">
-                Failed to load seminars.
+        upcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
+        past.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        const upcomingBodyDesktop = document.getElementById('upcoming-body-desktop');
+        const upcomingCardsMobile = document.getElementById('upcoming-cards-mobile');
+        const pastBodyDesktop = document.getElementById('past-body-desktop');
+        const pastCardsMobile = document.getElementById('past-cards-mobile');
+        const upcomingCount = document.getElementById('upcoming-count');
+
+        // Upcoming
+        if (upcoming.length) {
+          // Desktop table
+          upcomingBodyDesktop.innerHTML = upcoming
+            .map(
+              (s, idx) => {
+                const speakerName = s.speaker_url 
+                  ? `<a href="${s.speaker_url}" target="_blank" class="hover:underline">${s.speaker || 'TBA'}</a>`
+                  : (s.speaker || 'TBA');
+                
+                const resources = [];
+                if (s.slides_url) {
+                  resources.push(`<a href="${s.slides_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-xs font-medium">
+                    📊 Slides
+                  </a>`);
+                }
+                if (s.paper_url) {
+                  resources.push(`<a href="${s.paper_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-xs font-medium">
+                    📄 Paper
+                  </a>`);
+                }
+                const resourcesHtml = resources.length 
+                  ? resources.join(' ')
+                  : '<span class="text-slate-400 text-xs">—</span>';
+
+                return `
+            <tr class="${
+              idx === 0
+                ? 'bg-sardine-blue/5'
+                : 'odd:bg-slate-50/60 hover:bg-slate-100/60'
+            } transition-colors">
+              <td class="px-6 py-4 whitespace-nowrap font-semibold text-slate-900">
+                ${speakerName}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-slate-700">
+                ${s.affiliation || 'TBA'}
+              </td>
+              <td class="px-6 py-4 text-slate-700">
+                ${s.title || 'Title TBA'}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sardine-blue font-semibold">
+                ${formatDate(s.date)}
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="flex items-center justify-center gap-2">
+                  ${resourcesHtml}
+                </div>
               </td>
             </tr>`;
-        }
-      }
+              }
+            )
+            .join('');
 
-      loadSeminars();
-    </script>
+          // Mobile cards
+          upcomingCardsMobile.innerHTML = upcoming
+            .map((s, idx) => createSeminarCard(s, idx === 0))
+            .join('');
+
+          upcomingCount.textContent = upcoming.length;
+          upcomingCount.classList.remove('hidden');
+        } else {
+          upcomingBodyDesktop.innerHTML = `
+            <tr>
+              <td colspan="5" class="px-6 py-8 text-center text-slate-500 text-sm">
+                No upcoming seminars scheduled. Please check back soon!
+              </td>
+            </tr>`;
+          upcomingCardsMobile.innerHTML = `
+            <div class="text-center py-8 text-slate-500 text-sm rounded-xl bg-white border border-slate-200 p-6">
+              No upcoming seminars scheduled. Please check back soon!
+            </div>`;
+        }
+
+        // Past
+        if (past.length) {
+          // Desktop table
+          pastBodyDesktop.innerHTML = past
+            .map(
+              (s) => {
+                const speakerName = s.speaker_url 
+                  ? `<a href="${s.speaker_url}" target="_blank" class="hover:underline">${s.speaker || 'TBA'}</a>`
+                  : (s.speaker || 'TBA');
+                
+                const resources = [];
+                if (s.slides_url) {
+                  resources.push(`<a href="${s.slides_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-xs font-medium">
+                    📊 Slides
+                  </a>`);
+                }
+                if (s.paper_url) {
+                  resources.push(`<a href="${s.paper_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-xs font-medium">
+                    📄 Paper
+                  </a>`);
+                }
+                const resourcesHtml = resources.length 
+                  ? resources.join(' ')
+                  : '<span class="text-slate-400 text-xs">—</span>';
+
+                return `
+            <tr class="odd:bg-slate-50/40 hover:bg-slate-100/60 transition-colors">
+              <td class="px-6 py-4 whitespace-nowrap font-semibold text-slate-900">
+                ${speakerName}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-slate-700">
+                ${s.affiliation || 'TBA'}
+              </td>
+              <td class="px-6 py-4 text-slate-700">
+                ${s.title || 'Title TBA'}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-slate-500">
+                ${formatDate(s.date)}
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="flex items-center justify-center gap-2">
+                  ${resourcesHtml}
+                </div>
+              </td>
+            </tr>`;
+              }
+            )
+            .join('');
+
+          // Mobile cards
+          pastCardsMobile.innerHTML = past
+            .map((s) => createSeminarCard(s, false))
+            .join('');
+        } else {
+          pastCardsMobile.innerHTML = `
+            <div class="text-center py-8 text-slate-500 text-sm rounded-xl bg-white border border-slate-200 p-6">
+              No past seminars yet.
+            </div>`;
+        }
+      } catch (err) {
+        console.error('Error loading seminars:', err);
+        document.getElementById('upcoming-body-desktop').innerHTML = `
+          <tr>
+            <td colspan="5" class="px-6 py-8 text-center text-red-500 text-sm">
+              Failed to load seminars. Make sure seminars.js is present.
+            </td>
+          </tr>`;
+        document.getElementById('upcoming-cards-mobile').innerHTML = `
+          <div class="text-center py-8 text-red-500 text-sm rounded-xl bg-white border border-red-200 p-6">
+            Failed to load seminars. Make sure seminars.js is present.
+          </div>`;
+      }
+    }
+
+    loadSeminars();
+  </script>
 </body>
 </html>
