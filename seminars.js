@@ -2,14 +2,6 @@ const SEMINARS = [
   // === Upcoming ===
   // 
   {
-    speaker: "João Maria Janeiro",
-    speaker_url: "https://joao-maria-janeiro.github.io/",
-    affiliation: "FAIR at Meta and Sorbonne Université",
-    title: "Mixture of Languages: Improved Multilingual Encoders Through Language Grouping",
-    date: "2025-11-24",
-    status: "upcoming",
-  },
-  {
     speaker: "Songlin Yang",
     speaker_url: "https://sustcsonglin.github.io/",
     affiliation: "MIT CSAIL and Thinking Machines Lab",
@@ -17,8 +9,27 @@ const SEMINARS = [
     date: "2025-12-15",
     status: "upcoming",
   },
+  {
+    "speaker": "Zita Marinho",
+    "affiliation": "Google Deepmind and IST",
+    "title": "TBD",
+    "date": "2026-01-05",
+    "status": "upcoming"
+    }
+  
 
   // === Past ===
+ 
+  {
+    speaker: "João Maria Janeiro",
+    speaker_url: "",
+    affiliation: "FAIR at Meta and Sorbonne Université",
+    title: "Mixture of Languages: Improved Multilingual Encoders Through Language Grouping",
+    date: "2025-11-24",
+    status: "past",
+    slides_url: "",
+    paper_url: "",
+  },
   {
     speaker: "Vilém Zouhar",
     speaker_url: "",
