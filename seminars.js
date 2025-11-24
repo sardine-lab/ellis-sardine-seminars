@@ -1,25 +1,23 @@
 const SEMINARS = [
   // === Upcoming ===
-  // 
   {
     speaker: "Songlin Yang",
     speaker_url: "https://sustcsonglin.github.io/",
     affiliation: "MIT CSAIL and Thinking Machines Lab",
     title: "TBD",
     date: "2025-12-15",
-    status: "upcoming",
+    status: "upcoming"
   },
   {
-    "speaker": "Zita Marinho",
-    "affiliation": "Google Deepmind and IST",
-    "title": "TBD",
-    "date": "2026-01-05",
-    "status": "upcoming"
-    }
-  
+    speaker: "Zita Marinho",
+    speaker_url: "https://isr.tecnico.ulisboa.pt/author/zitaalexandramagalhaesmarinho/",
+    affiliation: "Google Deepmind and IST",
+    title: "TBD",
+    date: "2026-01-05",
+    status: "upcoming"
+  },
 
   // === Past ===
- 
   {
     speaker: "João Maria Janeiro",
     speaker_url: "",
@@ -28,7 +26,7 @@ const SEMINARS = [
     date: "2025-11-24",
     status: "past",
     slides_url: "",
-    paper_url: "",
+    paper_url: ""
   },
   {
     speaker: "Vilém Zouhar",
@@ -38,7 +36,7 @@ const SEMINARS = [
     date: "2024-01-22",
     status: "past",
     slides_url: "",
-    paper_url: "",
+    paper_url: ""
   },
   {
     speaker: "Haoran Xu",
