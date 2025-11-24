@@ -26,7 +26,7 @@ const SEMINARS = [
     date: "2025-11-24",
     status: "past",
     slides_url: "https://drive.google.com/file/d/1jxjw0Rh-HRD94Gp9fVojxxqLmC24ubtU/view?usp=drive_web",
-    paper_url: ""
+    paper_url: "https://drive.google.com/file/d/1jxjw0Rh-HRD94Gp9fVojxxqLmC24ubtU/view?usp=drive_web"
   },
   {
     speaker: "Vilém Zouhar",
