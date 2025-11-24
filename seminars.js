@@ -25,7 +25,7 @@ const SEMINARS = [
     title: "Mixture of Languages: Improved Multilingual Encoders Through Language Grouping",
     date: "2025-11-24",
     status: "past",
-    slides_url: "",
+    slides_url: "https://drive.google.com/file/d/1jxjw0Rh-HRD94Gp9fVojxxqLmC24ubtU/view?usp=drive_web",
     paper_url: ""
   },
   {
