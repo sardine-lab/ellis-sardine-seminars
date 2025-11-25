@@ -325,6 +325,11 @@
           📄 Paper
         </a>`);
       }
+      if (s.video_url) {
+        resources.push(`<a href="${s.video_url}" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-sm font-medium">
+          🎬 Video
+        </a>`);
+      }
       const resourcesHtml = resources.length 
         ? `<div class="flex flex-wrap gap-2 pt-3 border-t border-slate-200">${resources.join('')}</div>`
         : '';
@@ -407,6 +412,12 @@
                     📄 Paper
                   </a>`);
                 }
+                if (s.video_url) {
+                  resources.push(`<a href="${s.video_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-xs font-medium">
+                    🎬 Video
+                  </a>`);
+                }
+                
                 const resourcesHtml = resources.length 
                   ? resources.join(' ')
                   : '<span class="text-slate-400 text-xs">—</span>';
@@ -417,10 +428,10 @@
                 ? 'bg-sardine-blue/5'
                 : 'odd:bg-slate-50/60 hover:bg-slate-100/60'
             } transition-colors">
-              <td class="px-6 py-4 whitespace-nowrap font-semibold text-slate-900">
+              <td class="px-6 py-4 font-semibold text-slate-900">
                 ${speakerName}
               </td>
-              <td class="px-6 py-4 whitespace-nowrap text-slate-700">
+              <td class="px-6 py-4 text-slate-700">
                 ${s.affiliation || 'TBA'}
               </td>
               <td class="px-6 py-4 text-slate-700">
@@ -480,16 +491,21 @@
                     📄 Paper
                   </a>`);
                 }
+                if (s.video_url) {
+                  resources.push(`<a href="${s.video_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-xs font-medium">
+                    🎬 Video
+                  </a>`);
+                }
                 const resourcesHtml = resources.length 
                   ? resources.join(' ')
                   : '<span class="text-slate-400 text-xs">—</span>';
 
                 return `
             <tr class="odd:bg-slate-50/40 hover:bg-slate-100/60 transition-colors">
-              <td class="px-6 py-4 whitespace-nowrap font-semibold text-slate-900">
+              <td class="px-6 py-4 font-semibold text-slate-900">
                 ${speakerName}
               </td>
-              <td class="px-6 py-4 whitespace-nowrap text-slate-700">
+              <td class="px-6 py-4 text-slate-700">
                 ${s.affiliation || 'TBA'}
               </td>
               <td class="px-6 py-4 text-slate-700">

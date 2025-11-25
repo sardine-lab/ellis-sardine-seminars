@@ -26,7 +26,8 @@ const SEMINARS = [
     date: "2025-11-24",
     status: "past",
     slides_url: "https://drive.google.com/file/d/1jxjw0Rh-HRD94Gp9fVojxxqLmC24ubtU/view?usp=drive_web",
-    paper_url: "https://drive.google.com/file/d/1jxjw0Rh-HRD94Gp9fVojxxqLmC24ubtU/view?usp=drive_web"
+    paper_url: "https://aclanthology.org/2025.emnlp-main.1509/",
+    video_url: "https://www.youtube.com/watch?v=cd6Lhhh6lPI",
   },
   {
     speaker: "Vilém Zouhar",
@@ -36,7 +37,8 @@ const SEMINARS = [
     date: "2024-01-22",
     status: "past",
     slides_url: "",
-    paper_url: ""
+    paper_url: "",
+    video_url: "",
   },
   {
     speaker: "Haoran Xu",
@@ -47,6 +49,7 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
   {
     speaker: "Tom Kocmi and Vilém Zouhar",
@@ -57,6 +60,7 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
   {
     speaker: "Giorgos Vernikos",
@@ -67,6 +71,7 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
   {
     speaker: "Haikang Deng",
@@ -78,6 +83,7 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
   {
     speaker: "Prasann Singhal",
@@ -89,6 +95,7 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
   {
     speaker: "Mara Finkelstein and Markus Freitag",
@@ -100,6 +107,7 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
   {
     speaker: "João Sacramento",
@@ -110,6 +118,7 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
   {
     speaker: "Elena Voita",
@@ -120,6 +129,7 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
   {
     speaker: "Tri Dao",
@@ -131,6 +141,7 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
   {
     speaker: "Jason Wei",
@@ -141,5 +152,6 @@ const SEMINARS = [
     status: "past",
     slides_url: "",
     paper_url: "",
+    video_url: "",
   },
 ];
