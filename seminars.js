@@ -16,7 +16,14 @@ const SEMINARS = [
     date: "2026-01-05",
     status: "upcoming"
   },
-
+  {
+    speaker: "Aitor Gonzalez-Agirre",
+    speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
+    affiliation: "BSC Language Technologies Laboratory",
+    title: "TBD",
+    date: "2026-01-19",
+    status: "upcoming"
+  },
   // === Past ===
   {
     speaker: "João Maria Janeiro",
