@@ -21,6 +21,14 @@ const SEMINARS = [
     speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
     affiliation: "BSC Language Technologies Laboratory",
     title: "TBD",
+    date: "2026-02-02",
+    status: "upcoming"
+  },
+  {
+    speaker: "Ammar Khairi and Julia Kreutzer",
+    speaker_url: "https://cohere.com/research",
+    affiliation: "Cohere Labs",
+    title: "TBD",
     date: "2026-01-19",
     status: "upcoming"
   },
