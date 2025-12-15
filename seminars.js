@@ -32,6 +32,14 @@ const SEMINARS = [
     date: "2026-01-19",
     status: "upcoming"
   },
+  {
+    speaker: "Federico Bianchi",
+    speaker_url: "https://federicobianchi.io",
+    affiliation: "Together AI",
+    title: "TBD",
+    date: "2026-02-16",
+    status: "upcoming"
+  },
   // === Past ===
   {
     speaker: "João Maria Janeiro",
