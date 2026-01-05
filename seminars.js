@@ -1,22 +1,6 @@
 const SEMINARS = [
   // === Upcoming ===
   {
-    speaker: "Songlin Yang",
-    speaker_url: "https://sustcsonglin.github.io/",
-    affiliation: "MIT CSAIL and Thinking Machines Lab",
-    title: "TBD",
-    date: "2025-12-15",
-    status: "upcoming"
-  },
-  {
-    speaker: "Zita Marinho",
-    speaker_url: "https://isr.tecnico.ulisboa.pt/author/zitaalexandramagalhaesmarinho/",
-    affiliation: "Google Deepmind and IST",
-    title: "TBD",
-    date: "2026-01-05",
-    status: "upcoming"
-  },
-  {
     speaker: "Aitor Gonzalez-Agirre",
     speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
     affiliation: "BSC Language Technologies Laboratory",
@@ -40,7 +24,17 @@ const SEMINARS = [
     date: "2026-02-16",
     status: "upcoming"
   },
+
   // === Past ===
+  {
+    speaker: "Zita Marinho",
+    speaker_url: "https://isr.tecnico.ulisboa.pt/author/zitaalexandramagalhaesmarinho/",
+    affiliation: "Google DeepMind and IST",
+    title: "RL in the era of LLMs",
+    date: "2026-01-05",
+    status: "past",
+    slides_url: "https://drive.google.com/file/d/1g7tlQ39B1jeN11Qtbxc12udqgu6gSicQ/view?usp=sharing",
+  },
   {
     speaker: "João Maria Janeiro",
     speaker_url: "",
@@ -112,8 +106,7 @@ const SEMINARS = [
     speaker: "Prasann Singhal",
     speaker_url: "",
     affiliation: "UT Austin",
-    title:
-      "A Long Way to Go: Investigating Length Correlations in RLHF",
+    title: "A Long Way to Go: Investigating Length Correlations in RLHF",
     date: "2023-11-13",
     status: "past",
     slides_url: "",
