@@ -33,7 +33,7 @@ const SEMINARS = [
     title: "RL in the era of LLMs",
     date: "2026-01-05",
     status: "past",
-    #slides_url: "https://drive.google.com/file/d/1g7tlQ39B1jeN11Qtbxc12udqgu6gSicQ/view?usp=sharing",
+    slides_url: "https://drive.google.com/file/d/1g7tlQ39B1jeN11Qtbxc12udqgu6gSicQ/view?usp=sharing",
   },
   {
     speaker: "João Maria Janeiro",
