@@ -12,7 +12,7 @@ const SEMINARS = [
     speaker: "Ammar Khairi and Julia Kreutzer",
     speaker_url: "https://cohere.com/research",
     affiliation: "Cohere Labs",
-    title: "TBD",
+    title: "From Data to Inference: Optimizing Multilingual Performance",
     date: "2026-01-19",
     status: "upcoming"
   },
