@@ -14,7 +14,10 @@ const SEMINARS = [
     affiliation: "Cohere Labs",
     title: "From Data to Inference: Optimizing Multilingual Performance",
     date: "2026-01-19",
-    status: "upcoming"
+    status: "upcoming",
+    paper_url: "https://arxiv.org/pdf/2506.20544",
+    slides_url: "https://docs.google.com/presentation/d/1iNsOayx7dRicC9rUbw7V8x15H8WbSv8g/edit?usp=sharing&ouid=100143296807313756807&rtpof=true&sd=true",
+    video_url: "https://drive.google.com/file/d/1G1NwLAeY8RjWr6tNBdR_cUvSlmhkiV8I/view?usp=sharing",
   },
   {
     speaker: "Federico Bianchi",
