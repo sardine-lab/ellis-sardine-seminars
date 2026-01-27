@@ -5,19 +5,8 @@ const SEMINARS = [
     speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
     affiliation: "BSC Language Technologies Laboratory",
     title: "TBD",
-    date: "2026-02-02",
+    date: "2026-03-02",
     status: "upcoming"
-  },
-  {
-    speaker: "Ammar Khairi and Julia Kreutzer",
-    speaker_url: "https://cohere.com/research",
-    affiliation: "Cohere Labs",
-    title: "From Data to Inference: Optimizing Multilingual Performance",
-    date: "2026-01-19",
-    status: "upcoming",
-    paper_url: "https://arxiv.org/pdf/2506.20544",
-    slides_url: "https://docs.google.com/presentation/d/1iNsOayx7dRicC9rUbw7V8x15H8WbSv8g/edit?usp=sharing&ouid=100143296807313756807&rtpof=true&sd=true",
-    video_url: "https://drive.google.com/file/d/1G1NwLAeY8RjWr6tNBdR_cUvSlmhkiV8I/view?usp=sharing",
   },
   {
     speaker: "Federico Bianchi",
@@ -32,11 +21,22 @@ const SEMINARS = [
     speaker_url: "",
     affiliation: "",
     title: "TBD",
-    date: "2026-03-02",
+    date: "2026-02-02",
     status: "upcoming"
   },
 
   // === Past ===
+  {
+    speaker: "Ammar Khairi and Julia Kreutzer",
+    speaker_url: "https://cohere.com/research",
+    affiliation: "Cohere Labs",
+    title: "From Data to Inference: Optimizing Multilingual Performance",
+    date: "2026-01-19",
+    status: "past",
+    paper_url: "https://arxiv.org/pdf/2506.20544",
+    slides_url: "https://docs.google.com/presentation/d/1iNsOayx7dRicC9rUbw7V8x15H8WbSv8g/edit?usp=sharing&ouid=100143296807313756807&rtpof=true&sd=true",
+    video_url: "https://drive.google.com/file/d/1G1NwLAeY8RjWr6tNBdR_cUvSlmhkiV8I/view?usp=sharing",
+  },
   {
     speaker: "Zita Marinho",
     speaker_url: "https://isr.tecnico.ulisboa.pt/author/zitaalexandramagalhaesmarinho/",
