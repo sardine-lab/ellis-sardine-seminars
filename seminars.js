@@ -12,7 +12,7 @@ const SEMINARS = [
     speaker: "Federico Bianchi",
     speaker_url: "https://federicobianchi.io",
     affiliation: "Together AI",
-    title: "TBD",
+    title: "Learning to Discover at Test Time",
     date: "2026-02-16",
     status: "upcoming"
   },
@@ -20,7 +20,7 @@ const SEMINARS = [
     speaker: "Gonçalo Faria",
     speaker_url: "",
     affiliation: "",
-    title: "TBD",
+    title: "Sample, Don't Search: Rethinking Test-Time Alignment for Language Models",
     date: "2026-02-02",
     status: "upcoming"
   },
