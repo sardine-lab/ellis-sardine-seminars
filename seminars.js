@@ -16,16 +16,17 @@ const SEMINARS = [
     date: "2026-02-16",
     status: "upcoming"
   },
+
+  // === Past ==
   {
     speaker: "Gonçalo Faria",
     speaker_url: "https://www.goncalofaria.com",
     affiliation: "University of Washington",
     title: "Sample, Don't Search: Rethinking Test-Time Alignment for Language Models",
     date: "2026-02-02",
-    status: "upcoming"
+    status: "past",
+    video_url: "https://drive.google.com/file/d/1VH2u6q4n6hRPkLoxXqqJjmje1-GGAh1J/view?usp=sharing",
   },
-
-  // === Past ===
   {
     speaker: "Ammar Khairi and Julia Kreutzer",
     speaker_url: "https://cohere.com/research",
