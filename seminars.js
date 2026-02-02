@@ -17,7 +17,7 @@ const SEMINARS = [
     status: "upcoming"
   },
 
-  // === Past ==
+  // === Past ===
   {
     speaker: "Gonçalo Faria",
     speaker_url: "https://www.goncalofaria.com",
