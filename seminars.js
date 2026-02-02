@@ -18,8 +18,8 @@ const SEMINARS = [
   },
   {
     speaker: "Gonçalo Faria",
-    speaker_url: "",
-    affiliation: "",
+    speaker_url: "https://www.goncalofaria.com",
+    affiliation: "University of Washington",
     title: "Sample, Don't Search: Rethinking Test-Time Alignment for Language Models",
     date: "2026-02-02",
     status: "upcoming"
