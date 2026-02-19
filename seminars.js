@@ -1,6 +1,14 @@
 const SEMINARS = [
   // === Upcoming ===
   {
+    speaker: "Jonas Hübotter",
+    speaker_url: "https://jonhue.github.io",
+    affiliation: "ETH Zürich",
+    title: "TBD",
+    date: "2026-03-16",
+    status: "upcoming"
+  },
+  {
     speaker: "Aitor Gonzalez-Agirre",
     speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
     affiliation: "BSC Language Technologies Laboratory",
@@ -14,7 +22,7 @@ const SEMINARS = [
     affiliation: "Together AI",
     title: "Learning to Discover at Test Time",
     date: "2026-02-16",
-    status: "upcoming"
+    status: "past"
   },
 
   // === Past ===
