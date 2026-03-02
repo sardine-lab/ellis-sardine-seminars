@@ -9,14 +9,6 @@ const SEMINARS = [
     status: "upcoming"
   },
   {
-    speaker: "Aitor Gonzalez-Agirre",
-    speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
-    affiliation: "BSC Language Technologies Laboratory",
-    title: "TBD",
-    date: "2026-03-02",
-    status: "upcoming"
-  },
-  {
     speaker: "Federico Bianchi",
     speaker_url: "https://federicobianchi.io",
     affiliation: "Together AI",
@@ -26,6 +18,15 @@ const SEMINARS = [
   },
 
   // === Past ===
+  {
+    speaker: "Aitor Gonzalez-Agirre",
+    speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
+    affiliation: "BSC Language Technologies Laboratory",
+    title: "",
+    date: "2026-03-02",
+    status: "past",
+    video_url: "https://drive.google.com/file/d/1leDEHII6evMiX8Ch1n7S_93m33n4AIu7/view?usp=sharing",
+  },
   {
     speaker: "Gonçalo Faria",
     speaker_url: "https://www.goncalofaria.com",
