@@ -5,7 +5,7 @@ const SEMINARS = [
     speaker_url: "https://jonhue.github.io",
     affiliation: "ETH Zürich",
     title: "TBD",
-    date: "2026-03-16",
+    date: "2026-03-16, 4PM Lisbon Time",
     status: "upcoming"
   },
   {
