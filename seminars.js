@@ -19,10 +19,10 @@ const SEMINARS = [
 
   // === Past ===
   {
-    speaker: "Aitor Gonzalez-Agirre",
+    speaker: "Aitor Gonzalez-Agirre & Júlia Falcão",
     speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
     affiliation: "BSC Language Technologies Laboratory",
-    title: "",
+    title: "Unlocking the Potential of Multilingual Language Models",
     date: "2026-03-02",
     status: "past",
     video_url: "https://drive.google.com/file/d/1leDEHII6evMiX8Ch1n7S_93m33n4AIu7/view?usp=sharing",
@@ -38,7 +38,7 @@ const SEMINARS = [
     video_url: "https://drive.google.com/file/d/1VH2u6q4n6hRPkLoxXqqJjmje1-GGAh1J/view?usp=sharing",
   },
   {
-    speaker: "Ammar Khairi and Julia Kreutzer",
+    speaker: "Ammar Khairi & Julia Kreutzer",
     speaker_url: "https://cohere.com/research",
     affiliation: "Cohere Labs",
     title: "From Data to Inference: Optimizing Multilingual Performance",
