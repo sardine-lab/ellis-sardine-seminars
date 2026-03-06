@@ -4,8 +4,8 @@ const SEMINARS = [
     speaker: "Jonas Hübotter",
     speaker_url: "https://jonhue.github.io",
     affiliation: "ETH Zürich",
-    title: "TBD",
-    date: "2026-03-16, 4PM Lisbon Time",
+    title: "Rethinking Post-Training with Self-Distillation",
+    date: "2026-03-16",
     status: "upcoming"
   },
   {
