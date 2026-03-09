@@ -1,6 +1,14 @@
 const SEMINARS = [
   // === Upcoming ===
   {
+    speaker: "Swabha Swayamdipta",
+    speaker_url: "https://swabhs.com",
+    affiliation: "USC Viterbi CS",
+    title: "TBD",
+    date: "2026-03-30",
+    status: "upcoming"
+  },
+  {
     speaker: "Jonas Hübotter",
     speaker_url: "https://jonhue.github.io",
     affiliation: "ETH Zürich",
