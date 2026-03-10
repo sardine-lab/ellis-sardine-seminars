@@ -1,6 +1,14 @@
 const SEMINARS = [
   // === Upcoming ===
   {
+    speaker: "Peter Hase",
+    speaker_url: "https://peterbhase.github.io",
+    affiliation: "Schmidt Sciences and Stanford University",
+    title: "TBD",
+    date: "2026-04-13",
+    status: "upcoming"
+  },
+  {
     speaker: "Swabha Swayamdipta",
     speaker_url: "https://swabhs.com",
     affiliation: "USC Viterbi CS",
