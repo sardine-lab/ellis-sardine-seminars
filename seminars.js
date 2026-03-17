@@ -4,7 +4,7 @@ const SEMINARS = [
     speaker: "Peter Hase",
     speaker_url: "https://peterbhase.github.io",
     affiliation: "Schmidt Sciences and Stanford University",
-    title: "TBD",
+    title: "LLM Interpretability: Faithful Reasoning and Controllable Knowledge",
     date: "2026-04-13",
     status: "upcoming"
   },
