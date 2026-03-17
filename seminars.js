@@ -22,7 +22,8 @@ const SEMINARS = [
     affiliation: "ETH Zürich",
     title: "Rethinking Post-Training with Self-Distillation",
     date: "2026-03-16",
-    status: "upcoming"
+    status: "past",
+    video_url: "https://drive.google.com/file/d/1QBFbRhWJfbH47GQhwBdhsqG-KdscHdTU/view?usp=sharing",
   },
   {
     speaker: "Federico Bianchi",
