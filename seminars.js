@@ -14,7 +14,8 @@ const SEMINARS = [
     affiliation: "USC Viterbi CS",
     title: "TBD",
     date: "2026-03-30",
-    status: "upcoming"
+    status: "past",
+    video_url: "https://drive.google.com/file/d/1woblxjwuHIulIWdfyhWHikQYKPqJhUJy/view?usp=sharing",
   },
   {
     speaker: "Jonas Hübotter",
