@@ -6,7 +6,8 @@ const SEMINARS = [
     affiliation: "Schmidt Sciences and Stanford University",
     title: "LLM Interpretability: Faithful Reasoning and Controllable Knowledge",
     date: "2026-04-13",
-    status: "upcoming"
+    status: "past",
+    video_url: "https://drive.google.com/file/d/1pPAo8AHI2eXGxXC1z96lSwUJNEsSdGkQ/view?usp=sharing",
   },
   {
     speaker: "Swabha Swayamdipta",
