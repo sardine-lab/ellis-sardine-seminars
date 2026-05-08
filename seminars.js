@@ -13,7 +13,7 @@ const SEMINARS = [
     speaker: "Swabha Swayamdipta",
     speaker_url: "https://swabhs.com",
     affiliation: "USC Viterbi CS",
-    title: "TBD",
+    title: "Small Samples, Big Reveal: What can we learn from limited observations of language model behavior?",
     date: "2026-03-30",
     status: "past",
     video_url: "https://drive.google.com/file/d/1woblxjwuHIulIWdfyhWHikQYKPqJhUJy/view?usp=sharing",
