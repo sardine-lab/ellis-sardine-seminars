@@ -11,7 +11,7 @@ const SEMINARS = [
     speaker: "Luís Marques",
     speaker_url: "https://luis-marques.github.io",
     affiliation: "University of Michigan",
-    title: "TBD",
+    title: "TBD (in person)",
     date: "2026-05-25",
   },
   {
