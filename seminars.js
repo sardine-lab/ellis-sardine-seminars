@@ -1,6 +1,13 @@
 const SEMINARS = [
   // === Upcoming ===
   {
+    speaker: "Marcely Zanon Boito",
+    speaker_url: "https://mzboito.github.io",
+    affiliation: "Naver Labs Europe",
+    title: "TBD",
+    date: "2026-06-08",
+  },
+  {
     speaker: "Peter Hase",
     speaker_url: "https://peterbhase.github.io",
     affiliation: "Schmidt Sciences and Stanford University",
