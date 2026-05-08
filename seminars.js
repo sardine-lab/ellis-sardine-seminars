@@ -8,6 +8,13 @@ const SEMINARS = [
     date: "2026-06-08",
   },
   {
+    speaker: "Luís Marques",
+    speaker_url: "https://luis-marques.github.io",
+    affiliation: "University of Michigan",
+    title: "TBD",
+    date: "2026-05-25",
+  },
+  {
     speaker: "Peter Hase",
     speaker_url: "https://peterbhase.github.io",
     affiliation: "Schmidt Sciences and Stanford University",
