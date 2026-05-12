@@ -15,6 +15,14 @@ const SEMINARS = [
     date: "2026-05-25",
   },
   {
+    speaker: "Kangrui Wang",
+    speaker_url: "",
+    affiliation: "Northwestern University",
+    title: "VAGEN:Reinforcing World Model Reasoning for Multi-Turn VLM Agents",
+    date: "TBD",
+    paper_url: "https://arxiv.org/html/2510.16907v1"
+  },
+  {
     speaker: "Peter Hase",
     speaker_url: "https://peterbhase.github.io",
     affiliation: "Schmidt Sciences and Stanford University",
