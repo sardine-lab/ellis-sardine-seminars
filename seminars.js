@@ -19,7 +19,7 @@ const SEMINARS = [
     speaker_url: "",
     affiliation: "Northwestern University",
     title: "VAGEN:Reinforcing World Model Reasoning for Multi-Turn VLM Agents",
-    date: "TBD",
+    date: "2026-05-18",
     paper_url: "https://arxiv.org/html/2510.16907v1"
   },
   {
