@@ -6,7 +6,10 @@ const SEMINARS = [
     affiliation: "Northwestern University",
     title: "VAGEN:Reinforcing World Model Reasoning for Multi-Turn VLM Agents",
     date: "2026-05-18",
-    paper_url: "https://arxiv.org/html/2510.16907v1"
+    status: "",
+    paper_url: "https://arxiv.org/html/2510.16907v1",
+    slides_url: "",
+    video_url: "",
   },
   {
     speaker: "Marcely Zanon Boito",
@@ -14,6 +17,10 @@ const SEMINARS = [
     affiliation: "Naver Labs Europe",
     title: "TBD",
     date: "2026-06-08",
+    status: "",
+    paper_url: "",
+    slides_url: "",
+    video_url: "",
   },
   {
     speaker: "Luís Marques",
@@ -21,6 +28,10 @@ const SEMINARS = [
     affiliation: "University of Michigan",
     title: "TBD (in person)",
     date: "2026-05-25",
+    status: "",
+    paper_url: "",
+    slides_url: "",
+    video_url: "",
   },
   {
     speaker: "Peter Hase",
@@ -258,3 +269,4 @@ const SEMINARS = [
     video_url: "",
   },
 ];
+
