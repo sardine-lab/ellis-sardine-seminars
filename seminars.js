@@ -1,6 +1,14 @@
 const SEMINARS = [
   // === Upcoming ===
   {
+    speaker: "Kangrui Wang",
+    speaker_url: "",
+    affiliation: "Northwestern University",
+    title: "VAGEN:Reinforcing World Model Reasoning for Multi-Turn VLM Agents",
+    date: "2026-05-18",
+    paper_url: "https://arxiv.org/html/2510.16907v1"
+  },
+  {
     speaker: "Marcely Zanon Boito",
     speaker_url: "https://mzboito.github.io",
     affiliation: "Naver Labs Europe",
@@ -13,14 +21,6 @@ const SEMINARS = [
     affiliation: "University of Michigan",
     title: "TBD (in person)",
     date: "2026-05-25",
-  },
-  {
-    speaker: "Kangrui Wang",
-    speaker_url: "",
-    affiliation: "Northwestern University",
-    title: "VAGEN:Reinforcing World Model Reasoning for Multi-Turn VLM Agents",
-    date: "2026-05-18",
-    paper_url: "https://arxiv.org/html/2510.16907v1"
   },
   {
     speaker: "Peter Hase",
