@@ -1,17 +1,6 @@
 const SEMINARS = [
   // === Upcoming ===
   {
-    speaker: "Kangrui Wang",
-    speaker_url: "",
-    affiliation: "Northwestern University",
-    title: "VAGEN:Reinforcing World Model Reasoning for Multi-Turn VLM Agents",
-    date: "2026-05-18",
-    status: "",
-    paper_url: "https://arxiv.org/html/2510.16907v1",
-    slides_url: "",
-    video_url: "",
-  },
-  {
     speaker: "Marcely Zanon Boito",
     speaker_url: "https://mzboito.github.io",
     affiliation: "Naver Labs Europe",
@@ -34,6 +23,18 @@ const SEMINARS = [
     video_url: "",
   },
   {
+    speaker: "Kangrui Wang",
+    speaker_url: "",
+    affiliation: "Northwestern University",
+    title: "VAGEN:Reinforcing World Model Reasoning for Multi-Turn VLM Agents",
+    date: "TBD",
+    status: "",
+    paper_url: "https://arxiv.org/html/2510.16907v1",
+    slides_url: "",
+    video_url: "",
+  },
+  // === Past ===
+  {
     speaker: "Peter Hase",
     speaker_url: "https://peterbhase.github.io",
     affiliation: "Schmidt Sciences and Stanford University",
@@ -42,21 +43,18 @@ const SEMINARS = [
     status: "past",
     paper_url: "",
     slides_url: "",
-    video_url:
-      "https://drive.google.com/file/d/1pPAo8AHI2eXGxXC1z96lSwUJNEsSdGkQ/view?usp=sharing",
+    video_url: "https://drive.google.com/file/d/1pPAo8AHI2eXGxXC1z96lSwUJNEsSdGkQ/view?usp=sharing",
   },
   {
     speaker: "Swabha Swayamdipta",
     speaker_url: "https://swabhs.com",
     affiliation: "USC Viterbi CS",
-    title:
-      "Small Samples, Big Reveal: What can we learn from limited observations of language model behavior?",
+    title: "Small Samples, Big Reveal: What can we learn from limited observations of language model behavior?",
     date: "2026-03-30",
     status: "past",
     paper_url: "",
     slides_url: "",
-    video_url:
-      "https://drive.google.com/file/d/1woblxjwuHIulIWdfyhWHikQYKPqJhUJy/view?usp=sharing",
+    video_url: "https://drive.google.com/file/d/1woblxjwuHIulIWdfyhWHikQYKPqJhUJy/view?usp=sharing",
   },
   {
     speaker: "Jonas Hübotter",
@@ -67,8 +65,7 @@ const SEMINARS = [
     status: "past",
     paper_url: "",
     slides_url: "",
-    video_url:
-      "https://drive.google.com/file/d/1QBFbRhWJfbH47GQhwBdhsqG-KdscHdTU/view?usp=sharing",
+    video_url: "https://drive.google.com/file/d/1QBFbRhWJfbH47GQhwBdhsqG-KdscHdTU/view?usp=sharing",
   },
   {
     speaker: "Federico Bianchi",
@@ -81,8 +78,6 @@ const SEMINARS = [
     slides_url: "",
     video_url: "",
   },
-
-  // === Past ===
   {
     speaker: "Aitor Gonzalez-Agirre & Júlia Falcão",
     speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
@@ -92,8 +87,7 @@ const SEMINARS = [
     status: "past",
     paper_url: "",
     slides_url: "",
-    video_url:
-      "https://drive.google.com/file/d/1leDEHII6evMiX8Ch1n7S_93m33n4AIu7/view?usp=sharing",
+    video_url: "https://drive.google.com/file/d/1leDEHII6evMiX8Ch1n7S_93m33n4AIu7/view?usp=sharing",
   },
   {
     speaker: "Gonçalo Faria",
@@ -104,8 +98,7 @@ const SEMINARS = [
     status: "past",
     paper_url: "https://arxiv.org/pdf/2504.03790",
     slides_url: "",
-    video_url:
-      "https://drive.google.com/file/d/1VH2u6q4n6hRPkLoxXqqJjmje1-GGAh1J/view?usp=sharing",
+    video_url: "https://drive.google.com/file/d/1VH2u6q4n6hRPkLoxXqqJjmje1-GGAh1J/view?usp=sharing",
   },
   {
     speaker: "Ammar Khairi & Julia Kreutzer",
@@ -115,22 +108,18 @@ const SEMINARS = [
     date: "2026-01-19",
     status: "past",
     paper_url: "https://arxiv.org/pdf/2506.20544",
-    slides_url:
-      "https://docs.google.com/presentation/d/1iNsOayx7dRicC9rUbw7V8x15H8WbSv8g/edit?usp=sharing&ouid=100143296807313756807&rtpof=true&sd=true",
-    video_url:
-      "https://drive.google.com/file/d/1G1NwLAeY8RjWr6tNBdR_cUvSlmhkiV8I/view?usp=sharing",
+    slides_url: "https://docs.google.com/presentation/d/1iNsOayx7dRicC9rUbw7V8x15H8WbSv8g/edit?usp=sharing&ouid=100143296807313756807&rtpof=true&sd=true",
+    video_url: "https://drive.google.com/file/d/1G1NwLAeY8RjWr6tNBdR_cUvSlmhkiV8I/view?usp=sharing",
   },
   {
     speaker: "Zita Marinho",
-    speaker_url:
-      "https://isr.tecnico.ulisboa.pt/author/zitaalexandramagalhaesmarinho/",
+    speaker_url: "https://isr.tecnico.ulisboa.pt/author/zitaalexandramagalhaesmarinho/",
     affiliation: "IST/University of Lisbon",
     title: "RL in the era of LLMs",
     date: "2026-01-05",
     status: "past",
     paper_url: "",
-    slides_url:
-      "https://drive.google.com/file/d/1g7tlQ39B1jeN11Qtbxc12udqgu6gSicQ/view?usp=sharing",
+    slides_url: "https://drive.google.com/file/d/1g7tlQ39B1jeN11Qtbxc12udqgu6gSicQ/view?usp=sharing",
     video_url: "",
   },
   {
@@ -141,132 +130,7 @@ const SEMINARS = [
     date: "2025-11-24",
     status: "past",
     paper_url: "https://aclanthology.org/2025.emnlp-main.1509/",
-    slides_url:
-      "https://drive.google.com/file/d/1jxjw0Rh-HRD94Gp9fVojxxqLmC24ubtU/view?usp=drive_web",
+    slides_url: "https://drive.google.com/file/d/1jxjw0Rh-HRD94Gp9fVojxxqLmC24ubtU/view?usp=drive_web",
     video_url: "https://www.youtube.com/watch?v=cd6Lhhh6lPI",
   },
-  {
-    speaker: "Vilém Zouhar",
-    speaker_url: "",
-    affiliation: "ETH Zürich",
-    title: "Quality and Quantity of Machine Translation References for Automated Metrics",
-    date: "2024-01-22",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "Haoran Xu",
-    speaker_url: "",
-    affiliation: "Johns Hopkins University",
-    title: "Pushing the Boundaries of LLM Performance in Machine Translation",
-    date: "2024-01-29",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "Tom Kocmi and Vilém Zouhar",
-    speaker_url: "",
-    affiliation: "Microsoft and ETH Zürich",
-    title: "Navigating the Metrics Maze: Reconciling Score Magnitudes and Accuracies",
-    date: "2024-02-05",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "Giorgos Vernikos",
-    speaker_url: "",
-    affiliation: "EPFL",
-    title: "Don't Rank, Combine! Combining Machine Translation Hypotheses Using Quality Estimation",
-    date: "2024-02-12",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "Haikang Deng",
-    speaker_url: "",
-    affiliation: "UT Austin",
-    title:
-      "Reward-Augmented Decoding: Efficient Controlled Text Generation With a Unidirectional Reward Model",
-    date: "2023-12-18",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "Prasann Singhal",
-    speaker_url: "",
-    affiliation: "UT Austin",
-    title: "A Long Way to Go: Investigating Length Correlations in RLHF",
-    date: "2023-11-13",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "Mara Finkelstein and Markus Freitag",
-    speaker_url: "",
-    affiliation: "Google Research",
-    title:
-      "MBR and QE Finetuning: Training-time Distillation of the Best and Most Expensive Decoding Methods",
-    date: "2023-11-06",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "João Sacramento",
-    speaker_url: "",
-    affiliation: "ETH Zurich",
-    title: "Uncovering mesa-optimization algorithms in Transformers",
-    date: "2023-10-30",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "Elena Voita",
-    speaker_url: "",
-    affiliation: "Meta AI",
-    title: "Neurons in Large Language Models",
-    date: "2023-10-23",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "Tri Dao",
-    speaker_url: "",
-    affiliation: "Stanford and Together.AI",
-    title: "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
-    date: "2023-10-09",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
-    speaker: "Jason Wei",
-    speaker_url: "",
-    affiliation: "OpenAI",
-    title: "Scaling, emergence, and reasoning in large language models",
-    date: "2023-09-18",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
 ];
-
