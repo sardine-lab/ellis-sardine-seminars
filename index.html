@@ -173,7 +173,7 @@
             Join on Google Meet
           </a>
           <a
-            href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=Nm12aGF1Zm5lamY5NmttazF0dHM4cW8yc2lfMjAyNjAzMzBUMTU1NTAwWiBsYXJhLm5ldmVzLmVzY0Bt&amp;tmsrc=lara.neves.esc%40[...]"
+            href="https://calendar.google.com/calendar"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Add this event to Google Calendar"
@@ -201,7 +201,14 @@
       <!-- Desktop table -->
       <div class="hidden lg:block rounded-2xl bg-white shadow-md border border-slate-200 overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="min-w-full text-sm">
+          <table class="min-w-full text-sm table-fixed">
+            <colgroup>
+              <col class="w-[18%]" />
+              <col class="w-[22%]" />
+              <col class="w-[32%]" />
+              <col class="w-[14%]" />
+              <col class="w-[14%]" />
+            </colgroup>
             <thead>
               <tr class="bg-gradient-to-r from-sardine-blue to-sardine-light text-white">
                 <th class="px-6 py-4 text-left font-semibold">Guest Speaker</th>
@@ -242,7 +249,14 @@
       <!-- Desktop table -->
       <div class="hidden lg:block rounded-2xl bg-white shadow-md border border-slate-200 overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="min-w-full text-sm">
+          <table class="min-w-full text-sm table-fixed">
+            <colgroup>
+              <col class="w-[18%]" />
+              <col class="w-[22%]" />
+              <col class="w-[32%]" />
+              <col class="w-[14%]" />
+              <col class="w-[14%]" />
+            </colgroup>
             <thead>
               <tr class="bg-slate-100 text-slate-700">
                 <th class="px-6 py-4 text-left font-semibold">Guest Speaker</th>
@@ -272,7 +286,8 @@
 
       <div class="mt-8">
           <p class="text-sm text-slate-600">
-            We previously organized the IST-Unbabel Seminars, available at <a class="text-sardine-blue font-medium hover:underline" href="https://ist-unbabel-seminars.github.io/index" target="_bl[...]
+            We previously organized the IST-Unbabel Seminars, available at
+            <a class="text-sardine-blue font-medium hover:underline" href="https://ist-unbabel-seminars.github.io/index" target="_blank" rel="noopener noreferrer">ist-unbabel-seminars.github.io</a>.
           </p>
       </div>
     </section>
@@ -298,9 +313,14 @@
 
   <!-- Seminar loading logic -->
   <script>
-    function formatDate(dateString) {
+    function parseDate(dateString) {
       const d = new Date(dateString);
-      if (Number.isNaN(d.getTime())) return dateString;
+      return Number.isNaN(d.getTime()) ? null : d;
+    }
+
+    function formatDate(dateString) {
+      const d = parseDate(dateString);
+      if (!d) return dateString || 'TBD';
       return d.toLocaleDateString('en-GB', {
         day: 'numeric',
         month: 'short',
@@ -308,74 +328,104 @@
       });
     }
 
+    function dateSortValue(dateString, fallback) {
+      const d = parseDate(dateString);
+      return d ? d.getTime() : fallback;
+    }
+
     function isPast(dateString) {
-      const d = new Date(dateString);
+      const d = parseDate(dateString);
+      if (!d) return false;
       const today = new Date();
       today.setHours(0, 0, 0, 0);
       return d < today;
     }
 
-    function createSeminarCard(s, isNext = false) {
-      const cardClass = isNext 
-        ? 'seminar-card rounded-2xl bg-gradient-to-br from-sardine-blue/5 to-sardine-light/5 border-2 border-sardine-blue/20 p-5 shadow-md'
-        : 'seminar-card rounded-xl bg-white border border-slate-200 p-5 shadow-sm';
-      
-      const speakerName = s.speaker_url 
-        ? `<a href="${s.speaker_url}" target="_blank" class="hover:underline">${s.speaker || 'TBA'}</a>`
-        : (s.speaker || 'TBA');
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function safeUrl(value) {
+      return escapeHtml(value || '#');
+    }
+
+    function renderSpeaker(s, extraClass = '') {
+      const name = escapeHtml(s.speaker || 'TBA');
+      if (!s.speaker_url) return name;
+      return `<a href="${safeUrl(s.speaker_url)}" target="_blank" rel="noopener noreferrer" class="hover:underline ${extraClass}">${name}</a>`;
+    }
+
+    function renderResources(s, size = 'table') {
+      const baseClass = size === 'card'
+        ? 'inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-xs font-medium'
+        : 'inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text-white transition-colors text-xs font-medium whitespace-nowrap';
 
       const resources = [];
       if (s.slides_url) {
-        resources.push(`<a href="${s.slides_url}" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:tex[...]
-          📊 Slides
-        </a>`);
+        resources.push(`<a href="${safeUrl(s.slides_url)}" target="_blank" rel="noopener noreferrer" class="${baseClass}">📊 Slides</a>`);
       }
       if (s.paper_url) {
-        resources.push(`<a href="${s.paper_url}" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text[...]
-          📄 Paper
-        </a>`);
+        resources.push(`<a href="${safeUrl(s.paper_url)}" target="_blank" rel="noopener noreferrer" class="${baseClass}">📄 Paper</a>`);
       }
       if (s.video_url) {
-        resources.push(`<a href="${s.video_url}" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue hover:text[...]
-          🎬 Video
-        </a>`);
+        resources.push(`<a href="${safeUrl(s.video_url)}" target="_blank" rel="noopener noreferrer" class="${baseClass}">🎬 Video</a>`);
       }
-      const resourcesHtml = resources.length 
-        ? `<div class="flex flex-wrap gap-2 pt-3 border-t border-slate-200">${resources.join('')}</div>`
-        : '';
-      
+      return resources.length ? resources.join('') : '<span class="text-slate-400 text-xs">—</span>';
+    }
+
+    function createSeminarCard(s, isNext = false) {
+      const cardClass = isNext
+        ? 'seminar-card rounded-2xl bg-gradient-to-br from-sardine-blue/5 to-sardine-light/5 border-2 border-sardine-blue/20 p-5 shadow-md'
+        : 'seminar-card rounded-xl bg-white border border-slate-200 p-5 shadow-sm';
+
+      const resourcesHtml = renderResources(s, 'card');
+
       return `
         <div class="${cardClass}">
           <div class="flex flex-col gap-3">
             <div class="flex items-start justify-between gap-3">
               <div class="flex-1">
-                <h3 class="font-bold text-lg text-slate-900">${speakerName}</h3>
-                <p class="text-sm text-slate-600 mt-0.5">${s.affiliation || 'TBA'}</p>
+                <h3 class="font-bold text-lg text-slate-900">${renderSpeaker(s)}</h3>
+                <p class="text-sm text-slate-600 mt-0.5">${escapeHtml(s.affiliation || 'TBA')}</p>
               </div>
               <div class="flex-shrink-0">
-                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                  isNext 
-                    ? 'bg-sardine-blue text-white' 
-                    : 'bg-slate-100 text-slate-700'
-                }">
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold ${isNext ? 'bg-sardine-blue text-white' : 'bg-slate-100 text-slate-700'}">
                   ${formatDate(s.date)}
                 </span>
               </div>
             </div>
             <div class="pt-3 border-t border-slate-200">
-              <p class="text-sm text-slate-700 leading-relaxed">
-                ${s.title || 'Title TBA'}
-              </p>
+              <p class="text-sm text-slate-700 leading-relaxed">${escapeHtml(s.title || 'Title TBA')}</p>
             </div>
-            ${resourcesHtml}
+            ${resourcesHtml.includes('href=') ? `<div class="flex flex-wrap gap-2 pt-3 border-t border-slate-200">${resourcesHtml}</div>` : ''}
           </div>
         </div>
       `;
     }
 
+    function createTableRow(s, options = {}) {
+      const rowClass = options.rowClass || 'odd:bg-slate-50/40 hover:bg-slate-100/60 transition-colors';
+      const dateClass = options.dateClass || 'text-slate-500';
+      return `
+        <tr class="${rowClass}">
+          <td class="px-6 py-4 font-semibold text-slate-900 align-top break-words">${renderSpeaker(s)}</td>
+          <td class="px-6 py-4 text-slate-700 align-top break-words">${escapeHtml(s.affiliation || 'TBA')}</td>
+          <td class="px-6 py-4 text-slate-700 align-top break-words">${escapeHtml(s.title || 'Title TBA')}</td>
+          <td class="px-6 py-4 whitespace-nowrap align-top ${dateClass}">${formatDate(s.date)}</td>
+          <td class="px-6 py-4 text-center align-top">
+            <div class="flex flex-wrap items-center justify-center gap-2">${renderResources(s, 'table')}</div>
+          </td>
+        </tr>`;
+    }
+
     function loadSeminars() {
       try {
-        const seminars = SEMINARS.slice();
+        const seminars = Array.isArray(SEMINARS) ? SEMINARS.slice() : [];
         const upcoming = [];
         const past = [];
 
@@ -392,8 +442,8 @@
           }
         });
 
-        upcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
-        past.sort((a, b) => new Date(b.date) - new Date(a.date));
+        upcoming.sort((a, b) => dateSortValue(a.date, Number.POSITIVE_INFINITY) - dateSortValue(b.date, Number.POSITIVE_INFINITY));
+        past.sort((a, b) => dateSortValue(b.date, Number.NEGATIVE_INFINITY) - dateSortValue(a.date, Number.NEGATIVE_INFINITY));
 
         const upcomingBodyDesktop = document.getElementById('upcoming-body-desktop');
         const upcomingCardsMobile = document.getElementById('upcoming-cards-mobile');
@@ -401,144 +451,34 @@
         const pastCardsMobile = document.getElementById('past-cards-mobile');
         const upcomingCount = document.getElementById('upcoming-count');
 
-        // Upcoming
         if (upcoming.length) {
-          // Desktop table
           upcomingBodyDesktop.innerHTML = upcoming
-            .map(
-              (s, idx) => {
-                const speakerName = s.speaker_url 
-                  ? `<a href="${s.speaker_url}" target="_blank" class="hover:underline">${s.speaker || 'TBA'}</a>`
-                  : (s.speaker || 'TBA');
-
-                const resources = [];
-                if (s.slides_url) {
-                  resources.push(`<a href="${s.slides_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue h[...]
-                    📊 Slides
-                  </a>`);
-                }
-                if (s.paper_url) {
-                  resources.push(`<a href="${s.paper_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue ho[...]
-                    📄 Paper
-                  </a>`);
-                }
-                if (s.video_url) {
-                  resources.push(`<a href="${s.video_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue ho[...]
-                    🎬 Video
-                  </a>`);
-                }
-                
-                const resourcesHtml = resources.length 
-                  ? resources.join(' ')
-                  : '<span class="text-slate-400 text-xs">—</span>';
-
-                return `
-            <tr class="${
-              idx === 0
-                ? 'bg-sardine-blue/5'
-                : 'odd:bg-slate-50/60 hover:bg-slate-100/60'
-            } transition-colors">
-              <td class="px-6 py-4 font-semibold text-slate-900">
-                ${speakerName}
-              </td>
-              <td class="px-6 py-4 text-slate-700">
-                ${s.affiliation || 'TBA'}
-              </td>
-              <td class="px-6 py-4 text-slate-700">
-                ${s.title || 'Title TBA'}
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sardine-blue font-semibold">
-                ${formatDate(s.date)}
-              </td>
-              <td class="px-6 py-4 text-center">
-                <div class="flex items-center justify-center gap-2">
-                  ${resourcesHtml}
-                </div>
-              </td>
-            </tr>`;
-              }
-            )
+            .map((s, idx) => createTableRow(s, {
+              rowClass: idx === 0 ? 'bg-sardine-blue/5 transition-colors' : 'odd:bg-slate-50/60 hover:bg-slate-100/60 transition-colors',
+              dateClass: 'text-sardine-blue font-semibold',
+            }))
             .join('');
-
-          // Mobile cards
-          upcomingCardsMobile.innerHTML = upcoming
-            .map((s, idx) => createSeminarCard(s, idx === 0))
-            .join('');
-
+          upcomingCardsMobile.innerHTML = upcoming.map((s, idx) => createSeminarCard(s, idx === 0)).join('');
           upcomingCount.textContent = upcoming.length;
           upcomingCount.classList.remove('hidden');
         } else {
           upcomingBodyDesktop.innerHTML = `
-            <tr>
-              <td colspan="5" class="px-6 py-8 text-center text-slate-500 text-sm">
-                No upcoming seminars scheduled. Please check back soon!
-              </td>
-            </tr>`;
+            <tr><td colspan="5" class="px-6 py-8 text-center text-slate-500 text-sm">
+              No upcoming seminars scheduled. Please check back soon!
+            </td></tr>`;
           upcomingCardsMobile.innerHTML = `
             <div class="text-center py-8 text-slate-500 text-sm rounded-xl bg-white border border-slate-200 p-6">
               No upcoming seminars scheduled. Please check back soon!
             </div>`;
+          upcomingCount.classList.add('hidden');
         }
 
-        // Past
         if (past.length) {
-          // Desktop table
-          pastBodyDesktop.innerHTML = past
-            .map(
-              (s) => {
-                const speakerName = s.speaker_url 
-                  ? `<a href="${s.speaker_url}" target="_blank" class="hover:underline">${s.speaker || 'TBA'}</a>`
-                  : (s.speaker || 'TBA');
-                
-                const resources = [];
-                if (s.slides_url) {
-                  resources.push(`<a href="${s.slides_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue h[...]
-                    📊 Slides
-                  </a>`);
-                }
-                if (s.paper_url) {
-                  resources.push(`<a href="${s.paper_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue ho[...]
-                    📄 Paper
-                  </a>`);
-                }
-                if (s.video_url) {
-                  resources.push(`<a href="${s.video_url}" target="_blank" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sardine-blue/10 text-sardine-blue hover:bg-sardine-blue ho[...]
-                    🎬 Video
-                  </a>`);
-                }
-                const resourcesHtml = resources.length 
-                  ? resources.join(' ')
-                  : '<span class="text-slate-400 text-xs">—</span>';
-
-                return `
-            <tr class="odd:bg-slate-50/40 hover:bg-slate-100/60 transition-colors">
-              <td class="px-6 py-4 font-semibold text-slate-900">
-                ${speakerName}
-              </td>
-              <td class="px-6 py-4 text-slate-700">
-                ${s.affiliation || 'TBA'}
-              </td>
-              <td class="px-6 py-4 text-slate-700">
-                ${s.title || 'Title TBA'}
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap text-slate-500">
-                ${formatDate(s.date)}
-              </td>
-              <td class="px-6 py-4 text-center">
-                <div class="flex items-center justify-center gap-2">
-                  ${resourcesHtml}
-                </div>
-              </td>
-            </tr>`;
-              }
-            )
-            .join('');
-
-          // Mobile cards
-          pastCardsMobile.innerHTML = past
-            .map((s) => createSeminarCard(s, false))
-            .join('');
+          pastBodyDesktop.innerHTML = past.map((s) => createTableRow(s)).join('');
+          pastCardsMobile.innerHTML = past.map((s) => createSeminarCard(s, false)).join('');
         } else {
+          pastBodyDesktop.innerHTML = `
+            <tr><td colspan="5" class="px-6 py-8 text-center text-slate-500 text-sm">No past seminars yet.</td></tr>`;
           pastCardsMobile.innerHTML = `
             <div class="text-center py-8 text-slate-500 text-sm rounded-xl bg-white border border-slate-200 p-6">
               No past seminars yet.
@@ -547,14 +487,12 @@
       } catch (err) {
         console.error('Error loading seminars:', err);
         document.getElementById('upcoming-body-desktop').innerHTML = `
-          <tr>
-            <td colspan="5" class="px-6 py-8 text-center text-red-500 text-sm">
-              Failed to load seminars. Make sure seminars.js is present.
-            </td>
-          </tr>`;
+          <tr><td colspan="5" class="px-6 py-8 text-center text-red-500 text-sm">
+            Failed to load seminars. Make sure seminars.js is present and valid.
+          </td></tr>`;
         document.getElementById('upcoming-cards-mobile').innerHTML = `
           <div class="text-center py-8 text-red-500 text-sm rounded-xl bg-white border border-red-200 p-6">
-            Failed to load seminars. Make sure seminars.js is present.
+            Failed to load seminars. Make sure seminars.js is present and valid.
           </div>`;
       }
     }
