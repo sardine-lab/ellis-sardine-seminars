@@ -22,18 +22,18 @@ const SEMINARS = [
     slides_url: "",
     video_url: "",
   },
+  // === Past ===
   {
     speaker: "Kangrui Wang",
     speaker_url: "",
     affiliation: "Northwestern University",
     title: "VAGEN:Reinforcing World Model Reasoning for Multi-Turn VLM Agents",
-    date: "TBD",
-    status: "",
+    date: "2026-05-18",
+    status: "past",
     paper_url: "https://arxiv.org/html/2510.16907v1",
     slides_url: "",
-    video_url: "",
+    video_url: "https://drive.google.com/file/d/1pH0SYLA9UYInYzpi7WZy1cUDEU6QgcEQ/view?usp=drivesdk",
   },
-  // === Past ===
   {
     speaker: "Peter Hase",
     speaker_url: "https://peterbhase.github.io",
@@ -68,17 +68,6 @@ const SEMINARS = [
     video_url: "https://drive.google.com/file/d/1QBFbRhWJfbH47GQhwBdhsqG-KdscHdTU/view?usp=sharing",
   },
   {
-    speaker: "Federico Bianchi",
-    speaker_url: "https://federicobianchi.io",
-    affiliation: "Together AI",
-    title: "Learning to Discover at Test Time",
-    date: "2026-02-16",
-    status: "past",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
-  {
     speaker: "Aitor Gonzalez-Agirre & Júlia Falcão",
     speaker_url: "https://www.bsc.es/gonzalez-aguirre-aitor",
     affiliation: "BSC Language Technologies Laboratory",
@@ -88,6 +77,17 @@ const SEMINARS = [
     paper_url: "",
     slides_url: "",
     video_url: "https://drive.google.com/file/d/1leDEHII6evMiX8Ch1n7S_93m33n4AIu7/view?usp=sharing",
+  },
+  {
+    speaker: "Federico Bianchi",
+    speaker_url: "https://federicobianchi.io",
+    affiliation: "Together AI",
+    title: "Learning to Discover at Test Time",
+    date: "2026-02-16",
+    status: "past",
+    paper_url: "",
+    slides_url: "",
+    video_url: "",
   },
   {
     speaker: "Gonçalo Faria",
@@ -134,3 +134,4 @@ const SEMINARS = [
     video_url: "https://www.youtube.com/watch?v=cd6Lhhh6lPI",
   },
 ];
+
