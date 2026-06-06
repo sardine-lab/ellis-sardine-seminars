@@ -1,6 +1,28 @@
 const SEMINARS = [
   // === Upcoming ===
   {
+    speaker: "Paul Rottger",
+    speaker_url: "https://paulrottger.com/",
+    affiliation: "University of Oxford",
+    title: "Measuring and Mitigating Persona Distortions from AI Writing Assistance",
+    date: "2026-07-06",
+    status: "",
+    paper_url: "",
+    slides_url: "",
+    video_url: "",
+  },
+  {
+    speaker: "Christos H. Papadimitriou",
+    speaker_url: "",
+    affiliation: "Columbia University",
+    title: "What is the Biological Basis of Language?",
+    date: "2026-06-22",
+    status: "",
+    paper_url: "",
+    slides_url: "",
+    video_url: "",
+  },
+  {
     speaker: "Marcely Zanon Boito",
     speaker_url: "https://mzboito.github.io",
     affiliation: "Naver Labs Europe",
@@ -134,4 +156,3 @@ const SEMINARS = [
     video_url: "https://www.youtube.com/watch?v=cd6Lhhh6lPI",
   },
 ];
-
