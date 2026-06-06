@@ -1,6 +1,17 @@
 const SEMINARS = [
   // === Upcoming ===
   {
+    speaker: "Paul Rottger",
+    speaker_url: "https://paulrottger.com/",
+    affiliation: "University of Oxford",
+    title: "Measuring and Mitigating Persona Distortions from AI Writing Assistance",
+    date: "2026-07-06",
+    status: "",
+    paper_url: "",
+    slides_url: "",
+    video_url: "",
+  },
+  {
     speaker: "Christos H. Papadimitriou",
     speaker_url: "",
     affiliation: "Columbia University",
