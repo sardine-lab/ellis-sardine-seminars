@@ -5,7 +5,7 @@ const SEMINARS = [
     speaker_url: "https://paulrottger.com/",
     affiliation: "University of Oxford",
     title: "Measuring and Mitigating Persona Distortions from AI Writing Assistance",
-    date: "2026-07-06",
+    date: "2026-07-13",
     status: "",
     paper_url: "",
     slides_url: "",
