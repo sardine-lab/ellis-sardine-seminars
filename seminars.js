@@ -10,7 +10,7 @@ const SEMINARS = [
     date: "2026-09-21",
     status: "",
     paper_url: "https://arxiv.org/pdf/2603.03543",
-    slides_url: "https://drive.google.com/file/d/1gQBOnKrLkE38uIU8GaRsuawmbdGWEki_/view?usp=drive_link",
+    slides_url: "https://drive.google.com/file/d/1zaFy8as77IHbNk1fSyuj7iwK2xghUE5X/view?usp=drive_link",
     video_url: "",
   },
   {
