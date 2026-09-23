@@ -1,5 +1,18 @@
 const SEMINARS = [
   // === Upcoming ===
+  
+  // === Past ===
+    {
+    speaker: "Nicholas Kluge Corrêa",
+    speaker_url: "https://nkluge-correa.github.io/",
+    affiliation: "University of Bonn",
+    title: "Building Tucano 2: Open-Source Language Models That Actually Think in Portuguese",
+    date: "2026-09-21",
+    status: "",
+    paper_url: "https://arxiv.org/pdf/2603.03543",
+    slides_url: "https://drive.google.com/file/d/1gQBOnKrLkE38uIU8GaRsuawmbdGWEki_/view?usp=drive_link",
+    video_url: "",
+  },
   {
     speaker: "Paul Rottger",
     speaker_url: "https://paulrottger.com/",
@@ -44,7 +57,6 @@ const SEMINARS = [
     slides_url: "",
     video_url: "",
   },
-  // === Past ===
   {
     speaker: "Kangrui Wang",
     speaker_url: "",
