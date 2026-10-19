@@ -1,6 +1,16 @@
 const SEMINARS = [
   // === Upcoming ===
-  
+      {
+    speaker: "Antoine Bosselut",
+    speaker_url: "https://atcbosselut.github.io/",
+    affiliation: "School of Computer and Communication Sciences, EPFL",
+    title: "From Attention to Internalization: Long Context Processing as Test-time Learning",
+    date: "2026-11-02",
+    status: "",
+    paper_url: "",
+    slides_url: "",
+    video_url: "",
+  },
   // === Past ===
     {
     speaker: "Nicholas Kluge Corrêa",
