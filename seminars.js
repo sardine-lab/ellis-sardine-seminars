@@ -8,8 +8,8 @@ const SEMINARS = [
     date: "2026-11-02",
     status: "",
     paper_url: "",
-    slides_url: "",
-    video_url: "",
+    slides_url: "https://drive.google.com/file/d/1emmY3BrMMFzyYhbGeoQYlevoNBK2TPAm/view?usp=drive_link",
+    video_url: "https://drive.google.com/file/d/1yqVLonA-ctrVzTOHEJ-Za-HQshACVZjh/view?usp=drive_link",
   },
   // === Past ===
     {
