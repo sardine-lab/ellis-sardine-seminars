@@ -1,5 +1,16 @@
 const SEMINARS = [
   // === Upcoming ===
+        {
+    speaker: "Manuel Madeira",
+    speaker_url: "https://manuelmlmadeira.github.io/",
+    affiliation: "EPFL",
+    title: "On Trajectory-Aware Training for Masked Diffusion Language Models",
+    date: "2026-11-23",
+    status: "",
+    paper_url: "https://arxiv.org/pdf/2609.37974",
+    slides_url: "",
+    video_url: "",
+  },
       {
     speaker: "Antoine Bosselut",
     speaker_url: "https://atcbosselut.github.io/",
