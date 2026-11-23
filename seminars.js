@@ -33,17 +33,6 @@ const SEMINARS = [
     slides_url: "",
     video_url: "",
   },
-          {
-    speaker: "Aline Villavicencio",
-    speaker_url: "https://sites.google.com/view/alinev",
-    affiliation: "University of Exeter",
-    title: "Going beyond words to model figurative language",
-    date: "2026-12-14",
-    status: "",
-    paper_url: "",
-    slides_url: "",
-    video_url: "",
-  },
         {
     speaker: "Shansan Gong",
     speaker_url: "https://summmeer.github.io/",
